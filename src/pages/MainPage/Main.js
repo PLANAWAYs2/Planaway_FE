@@ -1,5 +1,12 @@
+import Header from '../../components/Header';
+import { Container } from '../../Layout';
+
 const Main = () => {
-  return <div>main 페이지</div>;
+  return (
+    <Container>
+      <Header />
+    </Container>
+  );
 };
 
 export default Main;

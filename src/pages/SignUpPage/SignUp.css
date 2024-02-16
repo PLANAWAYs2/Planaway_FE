@@ -29,16 +29,16 @@
   font-display: swap;
 }
 
-.SignUp {
+.SUSignUp {
   width: 83px;
   height: 29px;
   margin: auto;
-  margin-top: 71px;
+  margin-top: 150px;
   margin-bottom: 30px;
   font-family: 'Pretendard-SemiBold';
   font-size: 24px;
 }
-.infoBtn {
+.SUinfoBtn {
   box-sizing: border-box;
   margin: auto;
   padding: 30px;
@@ -49,19 +49,19 @@
   flex-direction: column;
   justify-content: space-between;
 }
-.info {
+.SUinfo {
   display: flex;
   flex-direction: column;
   margin-top: 20px;
   margin-left: 20px;
   margin-bottom: 15px;
 }
-.name,
-.id,
-.email,
-.password,
-.checkPw,
-.telephone {
+.SUname,
+.SUid,
+.SUemail,
+.SUpassword,
+.SUcheckPw,
+.SUtelephone {
   margin: 7px;
   width: 380px;
   display: flex;
@@ -69,40 +69,48 @@
   float: left;
 }
 
-.idCheck,
-.emailCheck {
+.SUidCheck,
+.SUemailCheck {
   display: flex;
 }
 
-.dup_id,
-.dup_email {
+.SUdup_idButton,
+.SUdup_emailButton {
   display: flex;
   font-family: 'Pretendard-Medium';
   font-size: 16px;
+  background-color: transparent;
+  border: none;
   color: #9a9a9a;
   align-items: center;
   margin-left: 10px;
+  cursor: pointer;
 }
 
-.name span,
-.id span,
-.email span,
-.password span,
-.checkPw span,
-.telephone span {
+.SUname span,
+.SUid span,
+.SUemail span,
+.SUpassword span,
+.SUcheckPw span,
+.SUtelephone span {
   display: flex;
   font-family: 'Pretendard-SemiBold';
   font-size: 16px;
   align-items: center;
 }
 
-input {
+.SUname input,
+.SUid input,
+.SUemail input,
+.SUpassword input,
+.SUcheckPw input,
+.SUtelephone input {
   width: 260px;
   height: 31px;
   border: 1px solid #efefef;
   border-radius: 4px;
 }
-.infoBtn button {
+.SUSignUpnButton {
   margin: auto;
   width: 260px;
   height: 42px;

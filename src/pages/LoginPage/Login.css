@@ -29,16 +29,16 @@
   font-display: swap;
 }
 
-.Login {
+.LLogin {
   width: 63px;
   height: 29px;
   margin: auto;
-  margin-top: 71px;
+  margin-top: 150px;
   margin-bottom: 30px;
   font-family: 'Pretendard-SemiBold';
   font-size: 24px;
 }
-.info {
+.Linfo {
   box-sizing: border-box;
   margin: auto;
   padding: 15px;
@@ -49,40 +49,41 @@
   flex-direction: column;
   justify-content: space-evenly;
 }
-.idPwBtn {
+.LidPwBtn {
   margin-top: 20px;
   display: flex;
   justify-content: space-evenly;
 }
-.idPw {
+.LidPw {
   width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.id {
+.Lid {
   display: flex;
   justify-content: space-between;
 }
-.password {
+.Lpassword {
   display: flex;
   justify-content: space-between;
 }
-.id span,
-.password span {
+.Lid span,
+.Lpassword span {
   display: flex;
   font-family: 'Pretendard-SemiBold';
   font-size: 16px;
   align-items: center;
 }
 
-input {
+.Lid input,
+.Lpassword input {
   width: 260px;
   height: 31px;
   border: 1px solid #efefef;
   border-radius: 4px;
 }
-.LoginButton {
+.LLoginButton {
   width: 91px;
   height: 86px;
   background-color: #ff6827;
@@ -93,21 +94,21 @@ input {
   border-radius: 4px;
   cursor: pointer;
 }
-.add {
+.Ladd {
   margin-left: 40px;
 }
-.Signup,
-.FindPw {
+.LSignup,
+.LFindPw {
   padding-bottom: 5px;
 }
-.Signup span,
-.FindPw span {
+.LSignup span,
+.LFindPw span {
   font-family: 'Pretendard-Medium';
   font-size: 16px;
   color: #9a9a9a;
 }
-.Signup button,
-.FindPw button {
+.LSignup button,
+.LFindPw button {
   background-color: transparent;
   border: none;
   font-family: 'Pretendard-Medium';
@@ -115,24 +116,24 @@ input {
   font-size: 16px;
   cursor: pointer;
 }
-.line1 {
+.Lline1 {
   margin: auto;
   border: 1px solid #efefef;
   width: 616px;
   margin-top: 30px;
 }
-.anotherWay {
+.LanotherWay {
   margin: auto;
   display: flex;
   flex-direction: column;
 }
-.anotherWay span {
+.LanotherWay span {
   text-align: center;
   font-family: 'Pretendard-SemiBold';
   font-size: 16px;
   margin-top: 50px;
 }
-.anotherWay button {
+.LanotherWay button {
   margin: auto;
   margin-top: 30px;
   width: 500px;
@@ -148,14 +149,14 @@ input {
   padding-bottom: 0px;
   cursor: pointer;
 }
-.anotherWay img {
+.LanotherWay img {
   margin: 0px 20px;
 }
-.anotherWay .googleLogin {
+.LanotherWay .LgoogleLogin {
   margin: auto;
   padding-right: 60px;
 }
-.anotherWay .line2 {
+.LanotherWay .Lline2 {
   height: 41px;
   border: 1px solid #efefef;
 }
