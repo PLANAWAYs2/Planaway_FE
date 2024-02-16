@@ -1,19 +1,21 @@
 import { React, useRef, useState } from 'react';
 import {
+  HeaderWrapper,
   Nav,
   MenuWrapper,
   NavLink,
-  NavMenu,
-  SearchForm,
-  Input,
+  NavMenu1,
+  NavMenu2,
+  HSearchForm,
+  HInput,
   NavBtn,
-  Button,
+  HButton,
 } from './HeaderStyle';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 
-const Navbar = () => {
+const Header = () => {
   const searchRef = useRef();
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
@@ -37,51 +39,54 @@ const Navbar = () => {
   };
 
   return (
-    <Nav>
-      <NavMenu>
-        <NavLink to="/" activestyle="true">
-          <img
-            className="logo"
-            src={process.env.PUBLIC_URL + '/assets/logo.png'}
-            alt="Logo"
-          />
-        </NavLink>
-
-        <NavBtn>
-          {isLoggedIn ? (
-            <Button onClick={handleUserClick}>사용자 이름</Button>
-          ) : (
-            <Button onClick={handleUserClick}>로그인/회원가입</Button>
-          )}
-        </NavBtn>
-      </NavMenu>
-
-      <NavMenu>
-        <MenuWrapper>
-          <NavLink to="/plandetail" activestyle="true">
-            여행 계획 시작하기
+    <HeaderWrapper>
+      <Nav>
+        <NavMenu1>
+          <NavLink to="/" activestyle="true">
+            <img
+              className="logo"
+              src={process.env.PUBLIC_URL + '/assets/logo.png'}
+              alt="Logo"
+            />
           </NavLink>
-          <NavLink to="/planlist" activestyle="true">
-            기존 계획 조회하기
-          </NavLink>
-          <NavLink to="/viewplan" activestyle="true">
-            여행지 둘러보기
-          </NavLink>
-        </MenuWrapper>
 
-        <SearchForm onSubmit={handleSubmit}>
-          <FontAwesomeIcon icon={faMagnifyingGlass} />{' '}
-          <Input
-            placeholder="가고 싶은 국가나 도시를 검색하세요."
-            value={searchTerm}
-            ref={searchRef}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            type="text"
-          />
-        </SearchForm>
-      </NavMenu>
-    </Nav>
+          <NavBtn>
+            {isLoggedIn ? (
+              <HButton onClick={handleUserClick}>사용자 이름</HButton>
+            ) : (
+              <HButton onClick={handleUserClick}>로그인/회원가입</HButton>
+            )}
+          </NavBtn>
+        </NavMenu1>
+
+        <NavMenu2>
+          <MenuWrapper>
+            <NavLink to="/uploadplan" activestyle="true">
+              여행 계획 시작하기
+            </NavLink>
+            <NavLink to="/planlist" activestyle="true">
+              기존 계획 조회하기
+            </NavLink>
+            <NavLink to="/viewplan" activestyle="true">
+              여행지 둘러보기
+            </NavLink>
+          </MenuWrapper>
+
+          <HSearchForm onSubmit={handleSubmit}>
+            <FontAwesomeIcon icon={faMagnifyingGlass} />{' '}
+            <HInput
+              placeholder="가고 싶은 국가나 도시를 검색하세요."
+              value={searchTerm}
+              ref={searchRef}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              type="text"
+            />
+          </HSearchForm>
+        </NavMenu2>
+      </Nav>
+      <hr />
+    </HeaderWrapper>
   );
 };
 
-export default Navbar;
+export default Header;

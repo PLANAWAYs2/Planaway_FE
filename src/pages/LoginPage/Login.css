@@ -136,6 +136,7 @@
 .LanotherWay button {
   margin: auto;
   margin-top: 30px;
+  padding: 0;
   width: 500px;
   height: 44px;
   border: 1px solid #efefef;
@@ -145,12 +146,13 @@
   font-size: 16px;
   color: #9a9a9a;
   display: flex;
-  padding-top: 0px;
-  padding-bottom: 0px;
   cursor: pointer;
 }
 .LanotherWay img {
-  margin: 0px 20px;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  margin: 8px 15px;
 }
 .LanotherWay .LgoogleLogin {
   margin: auto;

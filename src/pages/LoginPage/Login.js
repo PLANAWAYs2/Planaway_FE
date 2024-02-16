@@ -33,9 +33,8 @@ const Login = () => {
 
   return (
     <>
+      <Header />
       <Container>
-        <Header />
-
         <div className="LLoginPage">
           <div className="LLogin">로그인</div>
           <div className="Linfo">
@@ -79,7 +78,7 @@ const Login = () => {
           <div className="LanotherWay">
             <span>다른 방법으로 로그인</span>
             <button>
-              <img src="./img/google.png"></img>
+              <img src={process.env.PUBLIC_URL + '/assets/google.png'}></img>
               <div className="Lline2"></div>
               <div className="LgoogleLogin">구글 아이디로 로그인</div>
             </button>

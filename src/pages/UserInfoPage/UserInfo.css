@@ -29,53 +29,84 @@
   font-display: swap;
 }
 
-.SUSignUp {
-  width: 83px;
+.UIUserInfo {
+  width: 110px;
   height: 29px;
   margin: auto;
-  margin-top: 150px;
+  margin-top: 71px;
   margin-bottom: 30px;
   font-family: 'Pretendard-SemiBold';
   font-size: 24px;
 }
-.SUinfoBtn {
+.UIinfoBtn {
   box-sizing: border-box;
   margin: auto;
+  margin-top: 31px;
   padding: 30px;
   border: 1px solid #efefef;
   width: 616px;
-  height: 456px;
+  height: 570px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.SUinfo {
+.UIinfo {
   display: flex;
   flex-direction: column;
   margin-top: 20px;
   margin-left: 20px;
   margin-bottom: 20px;
 }
-.SUname,
-.SUid,
-.SUemail,
-.SUpassword,
-.SUcheckPw,
-.SUtelephone {
+
+.UIPfpPicture {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.UIPfpButton {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+}
+
+.UIPfpEditBtn,
+.UIPfpRemoveBtn {
+  width: 45px;
+  height: 25px;
+  background-color: transparent;
+  border: 1px solid #efefef;
+  margin-left: 12px;
+  font-family: 'Pretendard-Medium';
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.UIPfp,
+.UIname,
+.UIid,
+.UIemail,
+.UIpassword,
+.UIcheckPw,
+.UItelephone {
   margin: 7px;
   width: 380px;
   display: flex;
   justify-content: space-between;
-  float: left;
 }
 
-.SUidCheck,
-.SUemailCheck {
+.UIPfp {
+  margin-bottom: 44px;
+}
+
+.UIidCheck,
+.UIemailCheck {
   display: flex;
 }
 
-.SUdup_idButton,
-.SUdup_emailButton {
+.UIdup_idButton,
+.UIdup_emailButton {
   display: flex;
   font-family: 'Pretendard-Medium';
   font-size: 16px;
@@ -87,30 +118,31 @@
   cursor: pointer;
 }
 
-.SUname span,
-.SUid span,
-.SUemail span,
-.SUpassword span,
-.SUcheckPw span,
-.SUtelephone span {
+.UIPfp span,
+.UIname span,
+.UIid span,
+.UIemail span,
+.UIpassword span,
+.UIcheckPw span,
+.UItelephone span {
   display: flex;
   font-family: 'Pretendard-SemiBold';
   font-size: 16px;
   align-items: center;
 }
 
-.SUname input,
-.SUid input,
-.SUemail input,
-.SUpassword input,
-.SUcheckPw input,
-.SUtelephone input {
+.UIname input,
+.UIid input,
+.UIemail input,
+.UIpassword input,
+.UIcheckPw input,
+.UItelephone input {
   width: 260px;
   height: 31px;
   border: 1px solid #efefef;
   border-radius: 4px;
 }
-.SUSignUpnButton {
+.UISignUpnButton {
   margin: auto;
   width: 260px;
   height: 42px;

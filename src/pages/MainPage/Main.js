@@ -3,9 +3,10 @@ import { Container } from '../../Layout';
 
 const Main = () => {
   return (
-    <Container>
+    <>
       <Header />
-    </Container>
+      <Container></Container>
+    </>
   );
 };
 

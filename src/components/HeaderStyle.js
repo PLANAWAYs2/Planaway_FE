@@ -1,15 +1,37 @@
 import styled from 'styled-components';
 import { NavLink as Link } from 'react-router-dom';
 
-export const Nav = styled.nav`
-  height: 70px;
-  display: flex;
-  flex-direction: column;
+export const HeaderWrapper = styled.div`
+  hr {
+    width: 100%;
+    margin: 14px 0 0;
+    border: #ff6827 1px solid;
+  }
 `;
 
-export const NavMenu = styled.div`
+export const Nav = styled.nav`
+  font-family: 'Pretendard-Regular';
+  color: #2c2c2c;
+  display: flex;
+  flex-direction: column;
+  width: 1040px;
+  margin: 75px auto 0;
+
+  @media screen and (max-width: 1040px) {
+    width: 100%;
+  }
+`;
+
+export const NavMenu1 = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-bottom: 42px;
+`;
+
+export const NavMenu2 = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 `;
 
 export const MenuWrapper = styled.nav`
@@ -27,7 +49,7 @@ export const NavLink = styled(Link)`
   cursor: pointer;
 
   width: 192px;
-  margin: 0 20px 20px 0;
+  margin-right: 20px;
 
   &:hover {
     transition: all 0.2s ease-in-out;
@@ -35,19 +57,34 @@ export const NavLink = styled(Link)`
   }
 
   img {
-    width: 192px;
+    height: 40px;
   }
 `;
 
-export const SearchForm = styled.form``;
+export const HSearchForm = styled.form`
+  background-color: #efefef;
+  border-radius: 4px;
+  display: flex;
+  width: 228px;
+  height: 33px;
+  align-items: center;
+  padding: 0 10px;
 
-export const Input = styled.input`
+  svg {
+    width: 14px;
+    height: 14px;
+    margin-right: 10px;
+  }
+`;
+
+export const HInput = styled.input`
   border: none;
-  width: 210px;
-  height: 30px;
-  border-bottom: 1px solid #9a9a9a;
-  outline: none;
+  background-color: #efefef;
+  width: 100%;
+
   font-family: 'Pretendard-Regular';
+  font-size: 14px;
+  color: #2c2c2c;
 `;
 
 export const NavBtn = styled.nav`
@@ -55,16 +92,18 @@ export const NavBtn = styled.nav`
   align-items: center;
 `;
 
-export const Button = styled.button`
-  height: 60%;
-  border-radius: 5px;
+export const HButton = styled.button`
+  height: 40px;
+  border-radius: 4px;
   background-color: white;
-  padding: 0.1rem 0.7rem;
-  border: #9a9a9a 1px solid;
+  border: #e9e9e9 1px solid;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   font-family: 'Pretendard-Regular';
-  font-weight: bold;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2c2c2c;
+  padding: 10px;
 
   &:hover {
     transition: all 0.2s ease-in-out;
