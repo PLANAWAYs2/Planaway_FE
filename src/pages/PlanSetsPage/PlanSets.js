@@ -24,6 +24,12 @@ const PlanSets = () => {
                 src={`https://www.google.com/maps/embed/v1/place?key=${API_KEY}&q=프랑스&zoom=6`}
               />
             </div>
+            <div className="PSCard">
+              <div className="PSCard_1"></div>
+              <div className="PSCard_2"></div>
+              <div className="PSCard_3"></div>
+              <div className="PSCard_4"></div>
+            </div>
           </div>
         </div>
       </Container>
