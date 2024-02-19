@@ -16,7 +16,7 @@ const WishList = () => {
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <Profile />
-            <div className="WSMap">
+            <div className="MSMap">
               <iframe
                 width="828px"
                 height="448px"
