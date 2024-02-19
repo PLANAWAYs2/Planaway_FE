@@ -16,7 +16,7 @@ const PlanSets = () => {
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <Profile />
-            <div>
+            <div className="PSMap">
               <iframe
                 width="828px"
                 height="448px"
