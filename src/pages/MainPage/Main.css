@@ -35,11 +35,12 @@
   height: 300px;
   position: relative;
 }
-.MbannerImg img {
+
+.MbannerImgPic {
+  background-image: url('../../../public/assets/background.png');
   width: 100%;
   height: 300px;
   margin: auto;
-  background-color: #fff7e4;
   position: relative;
 }
 

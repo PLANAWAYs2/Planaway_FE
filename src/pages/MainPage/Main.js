@@ -8,7 +8,7 @@ const Main = () => {
       <Header />
       <div className="Mbanner">
         <div className="MbannerImg">
-          <img src={process.env.PUBLIC_URL + '/assets/background.png'} />
+          <div className="MbannerImgPic"></div>
           <div className="MbannerImgInfo">
             <div className="MbannerImgInfoTitle">
               지금<span> 인기있는</span> 여행지는?

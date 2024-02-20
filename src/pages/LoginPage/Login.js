@@ -2,10 +2,12 @@ import './Login.css';
 import { useState, useRef } from 'react';
 import Header from '../../components/Header';
 import { Container } from '../../Layout';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const idInput = useRef();
   const passwordInput = useRef();
+  const navigate = useNavigate();
 
   const [state, setState] = useState({
     id: '',
@@ -29,6 +31,10 @@ const Login = () => {
       passwordInput.current.focus();
       return;
     }
+  };
+
+  const handleSignUp = () => {
+    navigate('/login');
   };
 
   return (
@@ -66,7 +72,7 @@ const Login = () => {
             <div className="Ladd">
               <div className="LSignup">
                 <span>아직 계정이 없으신가요?</span>
-                <button>회원가입</button>
+                <button onClick={handleSignUp}>회원가입</button>
               </div>
               <div className="LFindPw">
                 <span>혹시 비밀번호를 잊으셨나요?</span>
