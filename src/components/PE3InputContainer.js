@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import PEInput from "./PEInput";
+import PE3Input from "./PE3Input";
 
-const PEInputContainer = () => {
+const PE3InputContainer = () => {
   const [inputItems, setInputItems] = useState([
     {
       id: 0,
@@ -35,7 +35,7 @@ const PEInputContainer = () => {
 
   return (
     <div>
-      <PEInput
+      <PE3Input
         inputItems={inputItems}
         inputAddId={inputAddId}
         AddInput={AddInput}
@@ -46,4 +46,4 @@ const PEInputContainer = () => {
   );
 };
 
-export default PEInputContainer;
+export default PE3InputContainer;

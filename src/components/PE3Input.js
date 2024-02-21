@@ -6,11 +6,11 @@ import {
   PECity,
   BtnWrapper,
   PE3Circle,
-} from "./PEInputStyle";
+} from "./PE3InputStyle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
-const PEInput = ({
+const PE3Input = ({
   inputItems,
   inputAddId,
   AddInput,
@@ -32,16 +32,18 @@ const PEInput = ({
     <PECity>
       {inputItems.map((item, index) => (
         <PE3SearchForm key={item.id}>
-          <PE3Circle
-            style={{ backgroundColor: circleColors[index] }}
-            onClick={() => handleClickCircle(index)}
-          />
-          <PEInputForm
-            name="one"
-            type="text"
-            defaultValue={item.one}
-            onChange={(e) => onChange(e, item.id)}
-          />
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <PE3Circle
+              style={{ backgroundColor: circleColors[index] }}
+              onClick={() => handleClickCircle(index)}
+            />
+            <PEInputForm
+              name="one"
+              type="text"
+              defaultValue={item.one}
+              onChange={(e) => onChange(e, item.id)}
+            />
+          </div>
           {index > 0 && inputItems[index - 1] && (
             <PlusMinusBtn onClick={() => DeleteInput(item.id)}>-</PlusMinusBtn>
           )}
@@ -54,4 +56,4 @@ const PEInput = ({
   );
 };
 
-export default PEInput;
+export default PE3Input;

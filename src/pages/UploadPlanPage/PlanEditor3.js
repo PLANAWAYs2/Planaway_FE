@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import {
   PE3Wrapper,
-  PEInput,
+  PE3Input,
   PEContents,
   PE3ContentTitle,
   PEMap,
@@ -10,7 +10,7 @@ import {
   PE3ContentBoxLine,
   PE3Container,
 } from "./PlanEditor3Style";
-import PEInputContainer from "../../components/PEInputContainer";
+import PE3InputContainer from "../../components/PE3InputContainer";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationArrow } from "@fortawesome/free-solid-svg-icons";
@@ -21,7 +21,7 @@ const PlanEditor3 = () => {
 
   return (
     <PE3Wrapper>
-      <PEInput
+      <PE3Input
         placeholder="제목을 입력하세요."
         value={title}
         ref={titleRef}
@@ -38,7 +38,7 @@ const PlanEditor3 = () => {
 
             <PEContents>
               <PEMapWrapper>
-                <PEInputContainer />
+                <PE3InputContainer />
               </PEMapWrapper>
             </PEContents>
           </PE3ContentBox>
@@ -50,7 +50,7 @@ const PlanEditor3 = () => {
 
             <PEContents>
               <PEMapWrapper>
-                <PEInputContainer />
+                <PE3InputContainer />
               </PEMapWrapper>
             </PEContents>
           </PE3ContentBox>
@@ -64,7 +64,7 @@ const PlanEditor3 = () => {
 
             <PEContents>
               <PEMapWrapper>
-                <PEInputContainer />
+                <PE3InputContainer />
               </PEMapWrapper>
             </PEContents>
           </PE3ContentBox>
@@ -76,7 +76,7 @@ const PlanEditor3 = () => {
 
             <PEContents>
               <PEMapWrapper>
-                <PEInputContainer />
+                <PE3InputContainer />
               </PEMapWrapper>
             </PEContents>
           </PE3ContentBox>
@@ -90,7 +90,7 @@ const PlanEditor3 = () => {
 
             <PEContents>
               <PEMapWrapper>
-                <PEInputContainer />
+                <PE3InputContainer />
               </PEMapWrapper>
             </PEContents>
           </PE3ContentBox>
@@ -102,7 +102,7 @@ const PlanEditor3 = () => {
 
             <PEContents>
               <PEMapWrapper>
-                <PEInputContainer />
+                <PE3InputContainer />
               </PEMapWrapper>
             </PEContents>
           </PE3ContentBox>
@@ -116,7 +116,7 @@ const PlanEditor3 = () => {
 
             <PEContents>
               <PEMapWrapper>
-                <PEInputContainer />
+                <PE3InputContainer />
               </PEMapWrapper>
             </PEContents>
           </PE3ContentBox>

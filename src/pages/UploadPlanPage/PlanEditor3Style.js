@@ -16,7 +16,7 @@ export const PE3Wrapper = styled.div`
   }
 `;
 
-export const PEInput = styled.input`
+export const PE3Input = styled.input`
   border: none;
   font-family: "Pretendard-Regular";
   color: #2c2c2c;
