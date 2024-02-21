@@ -22,14 +22,17 @@ const ViewPlan = () => {
       <Header />
       <Container>
         <div className="VPpage">
-          <div className="VPSorting">
+          <div className="VPTextSort">
+            <div className="VPSortingText">
+              <span>10</span>개의 여행일기가 있습니다.
+            </div>
             <div className="VPDropdown">
               <button onClick={handleClickDropdown} className="DDropdownBtn">
                 {DropdownView ? (
                   <img src={process.env.PUBLIC_URL + '/assets/ArrowUp.png'} />
                 ) : (
                   <img src={process.env.PUBLIC_URL + '/assets/ArrowDown.png'} />
-                )}{' '}
+                )}
                 <span>{initState}</span>
               </button>
               <Dropdown visiblity={DropdownView}>
