@@ -45,3 +45,10 @@ export const PlusMinusBtn = styled.button`
   font-size: 16px;
   color: #9a9a9a;
 `;
+
+export const PE3Circle = styled.div`
+  width: 14px;
+  height: 14px;
+  border-radius: 50%; /* 동그라미 모양으로 만들기 위해 */
+  background-color: #d9d9d9; /* 회색으로 설정 */
+`;
