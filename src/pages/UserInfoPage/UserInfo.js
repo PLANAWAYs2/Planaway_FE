@@ -18,6 +18,7 @@ const UserInfo = () => {
     password: '',
     checkPw: '',
     telephone: '',
+    profileImage: process.env.PUBLIC_URL + './assets/프로필.jpeg',
   });
 
   const handleChangeState = (e) => {
@@ -25,6 +26,20 @@ const UserInfo = () => {
       ...state,
       [e.target.name]: e.target.value,
     });
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function (event) {
+      const imageURL = event.target.result;
+      setState({ ...state, profileImage: imageURL });
+    };
+
+    if (file) {
+      reader.readAsDataURL(file); //비동기작업
+    }
   };
 
   const handleSubmit = (e) => {
@@ -71,12 +86,23 @@ const UserInfo = () => {
               <div className="UIPfp">
                 <span>프로필 사진</span>
                 <img
-                  src={process.env.PUBLIC_URL + '/assets/프로필.jpeg'}
-                  alt="사진"
+                  src={state.profileImage}
+                  alt="프로필 사진"
                   className="UIPfpPicture"
                 ></img>
                 <div className="UIPfpButton">
-                  <button className="UIPfpEditBtn">변경</button>
+                  <input
+                    type="file"
+                    id="fileInput"
+                    style={{ display: 'none' }}
+                    onChange={handleFileChange}
+                  />
+                  <button
+                    className="UIPfpEditBtn"
+                    onClick={() => document.getElementById('fileInput').click()}
+                  >
+                    변경
+                  </button>
                   <button className="UIPfpRemoveBtn">삭제</button>
                 </div>
               </div>
