@@ -8,10 +8,6 @@ const ViewPlan = () => {
   const [DropdownView, setDropdownView] = useState(false);
   const [initState, setInitState] = useState('최신순');
 
-  const Dropdown0 = useRef(0);
-  const Dropdown1 = useRef(1);
-  const Dropdown2 = useRef(2);
-
   const handleClickDropdown = () => {
     setDropdownView(!DropdownView);
   };
