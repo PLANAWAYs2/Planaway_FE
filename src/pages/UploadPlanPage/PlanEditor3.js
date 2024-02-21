@@ -81,6 +81,46 @@ const PlanEditor3 = () => {
             </PEContents>
           </PE3ContentBox>
         </PE3ContentBoxLine>
+
+        <PE3ContentBoxLine>
+          <PE3ContentBox>
+            <PE3ContentTitle>
+              <h4>샤워 화장</h4>
+            </PE3ContentTitle>
+
+            <PEContents>
+              <PEMapWrapper>
+                <PEInputContainer />
+              </PEMapWrapper>
+            </PEContents>
+          </PE3ContentBox>
+
+          <PE3ContentBox>
+            <PE3ContentTitle>
+              <h4>추가로 작성하세요</h4>
+            </PE3ContentTitle>
+
+            <PEContents>
+              <PEMapWrapper>
+                <PEInputContainer />
+              </PEMapWrapper>
+            </PEContents>
+          </PE3ContentBox>
+        </PE3ContentBoxLine>
+
+        <PE3ContentBoxLine>
+          <PE3ContentBox>
+            <PE3ContentTitle>
+              <h4>의류</h4>
+            </PE3ContentTitle>
+
+            <PEContents>
+              <PEMapWrapper>
+                <PEInputContainer />
+              </PEMapWrapper>
+            </PEContents>
+          </PE3ContentBox>
+        </PE3ContentBoxLine>
       </PE3Container>
     </PE3Wrapper>
   );

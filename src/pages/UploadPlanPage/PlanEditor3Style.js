@@ -27,7 +27,7 @@ export const PEInput = styled.input`
 export const PEContents = styled.div``;
 
 export const PE3ContentTitle = styled.div`
-  width: 404px;
+  width: 192px;
   display: flex;
   margin-bottom: 11px;
 
