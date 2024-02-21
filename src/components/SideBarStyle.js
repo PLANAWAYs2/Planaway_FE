@@ -9,6 +9,7 @@ export const SBWrapper = styled.div`
 `;
 
 export const SBLink = styled(Link)`
+  width: 172px;
   border: none;
   border-bottom: 1px solid #9a9a9a;
   font-family: "Pretendard-Regular";
