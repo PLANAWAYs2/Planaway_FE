@@ -51,6 +51,7 @@
 }
 .ProfileEdit {
   margin-top: 14px;
+  cursor: pointer;
 }
 .ProfileEdit span {
   font-family: Pretendard-Medium;

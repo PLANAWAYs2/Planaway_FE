@@ -34,7 +34,7 @@ const Login = () => {
   };
 
   const handleSignUp = () => {
-    navigate('/login');
+    navigate('/signUp');
   };
 
   return (
@@ -84,7 +84,10 @@ const Login = () => {
           <div className="LanotherWay">
             <span>다른 방법으로 로그인</span>
             <button>
-              <img src={process.env.PUBLIC_URL + '/assets/google.png'}></img>
+              <img
+                src={process.env.PUBLIC_URL + '/assets/google.png'}
+                alt="googleLogo"
+              ></img>
               <div className="Lline2"></div>
               <div className="LgoogleLogin">구글 아이디로 로그인</div>
             </button>
