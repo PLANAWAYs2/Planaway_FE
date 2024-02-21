@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const UPWrapper = styled.div`
   display: flex;
 `;
-export const PEWrapper = styled.div`
+export const PE3Wrapper = styled.div`
   margin: 73px 0 0 40px;
 
   display: flex;
@@ -11,7 +11,7 @@ export const PEWrapper = styled.div`
   width: 100%;
   hr {
     width: 100%;
-    margin: 26px 0 57px;
+    margin: 26px 0 20px;
     border: #efefef 1px solid;
   }
 `;
@@ -26,15 +26,10 @@ export const PEInput = styled.input`
 
 export const PEContents = styled.div``;
 
-export const PEContentTitle = styled.div`
+export const PE3ContentTitle = styled.div`
   width: 404px;
   display: flex;
-  border-bottom: 1px solid black;
-  margin-bottom: 21px;
-
-  svg {
-    margin: 0 18px 10px 0;
-  }
+  margin-bottom: 11px;
 
   h4 {
     font-weight: 400;
@@ -50,4 +45,17 @@ export const PEMap = styled.div`
 export const PEMapWrapper = styled.div`
   display: flex;
   align-items: flex-start;
+`;
+
+export const PE3ContentBox = styled.div`
+  margin: 0 24px 40px 0;
+`;
+
+export const PE3ContentBoxLine = styled.div`
+  margin: 0 0 0 0;
+`;
+
+export const PE3Container = styled.div`
+  display: flex;
+  flex-direction: row;
 `;

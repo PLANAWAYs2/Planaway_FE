@@ -2,7 +2,7 @@ import React from "react";
 import {
   PlusMinusBtn,
   PEInputForm,
-  PESearchForm,
+  PE3SearchForm,
   PECity,
   BtnWrapper,
 } from "./PEInputStyle";
@@ -20,7 +20,7 @@ const PEInput = ({
     <PECity>
       {inputItems.map((item, index) => {
         return (
-          <PESearchForm>
+          <PE3SearchForm>
             <FontAwesomeIcon icon={faMagnifyingGlass} />
 
             <PEInputForm
@@ -37,7 +37,7 @@ const PEInput = ({
             ) : (
               ""
             )}
-          </PESearchForm>
+          </PE3SearchForm>
         );
       })}
       <BtnWrapper>

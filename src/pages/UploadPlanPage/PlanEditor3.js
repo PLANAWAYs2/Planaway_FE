@@ -1,11 +1,14 @@
 import { useRef, useState } from "react";
 import {
-  PEWrapper,
+  PE3Wrapper,
   PEInput,
   PEContents,
-  PEContentTitle,
+  PE3ContentTitle,
   PEMap,
   PEMapWrapper,
+  PE3ContentBox,
+  PE3ContentBoxLine,
+  PE3Container,
 } from "./PlanEditor3Style";
 import PEInputContainer from "../../components/PEInputContainer";
 
@@ -13,13 +16,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationArrow } from "@fortawesome/free-solid-svg-icons";
 
 const PlanEditor3 = () => {
-  const API_KEY = "AIzaSyDedTPh8y0kQKaWqEGKnPwXAMXhLeENOHU";
-
   const titleRef = useRef();
   const [title, setTitle] = useState();
 
   return (
-    <PEWrapper>
+    <PE3Wrapper>
       <PEInput
         placeholder="제목을 입력하세요."
         value={title}
@@ -28,27 +29,60 @@ const PlanEditor3 = () => {
         type="text"
       />
       <hr />
+      <PE3Container>
+        <PE3ContentBoxLine>
+          <PE3ContentBox>
+            <PE3ContentTitle>
+              <h4>항공 관련</h4>
+            </PE3ContentTitle>
 
-      <PEContents>
-        <PEContentTitle>
-          <FontAwesomeIcon icon={faLocationArrow} size="lg" />
-          <h4>첫 번째 여행지, 프랑스</h4>
-        </PEContentTitle>
+            <PEContents>
+              <PEMapWrapper>
+                <PEInputContainer />
+              </PEMapWrapper>
+            </PEContents>
+          </PE3ContentBox>
 
-        <PEMapWrapper>
-          <PEMap>
-            <iframe
-              width="616px"
-              height="378px"
-              frameborder="0"
-              src={`https://www.google.com/maps/embed/v1/place?key=${API_KEY}&q=프랑스&zoom=6`}
-            />
-          </PEMap>
+          <PE3ContentBox>
+            <PE3ContentTitle>
+              <h4>생활</h4>
+            </PE3ContentTitle>
 
-          <PEInputContainer />
-        </PEMapWrapper>
-      </PEContents>
-    </PEWrapper>
+            <PEContents>
+              <PEMapWrapper>
+                <PEInputContainer />
+              </PEMapWrapper>
+            </PEContents>
+          </PE3ContentBox>
+        </PE3ContentBoxLine>
+
+        <PE3ContentBoxLine>
+          <PE3ContentBox>
+            <PE3ContentTitle>
+              <h4>전자 기기</h4>
+            </PE3ContentTitle>
+
+            <PEContents>
+              <PEMapWrapper>
+                <PEInputContainer />
+              </PEMapWrapper>
+            </PEContents>
+          </PE3ContentBox>
+
+          <PE3ContentBox>
+            <PE3ContentTitle>
+              <h4>기타</h4>
+            </PE3ContentTitle>
+
+            <PEContents>
+              <PEMapWrapper>
+                <PEInputContainer />
+              </PEMapWrapper>
+            </PEContents>
+          </PE3ContentBox>
+        </PE3ContentBoxLine>
+      </PE3Container>
+    </PE3Wrapper>
   );
 };
 

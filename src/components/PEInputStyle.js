@@ -6,13 +6,13 @@ export const PECity = styled.div`
   align-content: center;
 `;
 
-export const PESearchForm = styled.form`
+export const PE3SearchForm = styled.form`
   display: flex;
   width: 188px;
   align-items: center;
   border-bottom: 1px solid #9a9a9a;
   padding-bottom: 8px;
-  margin-bottom: 22px;
+  margin-bottom: 16px;
 
   svg {
     width: 14px;

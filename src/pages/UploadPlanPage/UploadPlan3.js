@@ -11,7 +11,7 @@ const UploadPlan3 = () => {
       <Container>
         <UPWrapper>
           <PlanSideBar />
-          {/*<PlanEditor3 />*/}
+          <PlanEditor3 />
         </UPWrapper>
       </Container>
     </>
