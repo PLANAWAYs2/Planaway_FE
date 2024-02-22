@@ -9,6 +9,8 @@ import {
   PE3ContentBox,
   PE3ContentBoxLine,
   PE3Container,
+  PE1ContentShortTitle,
+  PE1ContentBox,
 } from "./PlanEditor1Style";
 import PE3InputContainer from "../../components/PE3InputContainer";
 
@@ -30,10 +32,19 @@ const PlanEditor1 = () => {
         type="text"
       />
       <hr />
-      <PEContentTitle>
-        <FontAwesomeIcon icon={faLocationArrow} size="lg" />
-        <h4>여행할 국가를 입력하세요.</h4>
-      </PEContentTitle>
+      <PE1ContentBox>
+        <PEContentTitle>
+          <FontAwesomeIcon icon={faLocationArrow} size="lg" />
+          <h4>여행할 국가를 입력하세요.</h4>
+        </PEContentTitle>
+        <PE1ContentShortTitle>
+          <h4>대륙</h4>
+        </PE1ContentShortTitle>
+        <PE1ContentShortTitle>
+          <h4>나라</h4>
+        </PE1ContentShortTitle>
+      </PE1ContentBox>
+
       <PEContentTitle>
         <FontAwesomeIcon icon={faCalendar} size="lg" />
         <h4>여행할 기간을 입력하세요.</h4>

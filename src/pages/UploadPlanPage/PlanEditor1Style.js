@@ -43,6 +43,19 @@ export const PEContentTitle = styled.div`
   }
 `;
 
+export const PE1ContentShortTitle = styled.div`
+  width: 192px;
+  display: flex;
+  border-bottom: 1px solid black;
+  margin-bottom: 21px;
+
+  h4 {
+    font-weight: 400;
+    color: #9a9a9a;
+    margin: 0 0 7px 0;
+  }
+`;
+
 export const PEMap = styled.div`
   margin: 0 24px 52px 0;
 `;
@@ -50,4 +63,10 @@ export const PEMap = styled.div`
 export const PEMapWrapper = styled.div`
   display: flex;
   align-items: flex-start;
+`;
+
+export const PE1ContentBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
 `;
