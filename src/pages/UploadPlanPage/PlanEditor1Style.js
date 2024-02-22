@@ -46,13 +46,15 @@ export const PEContentTitle = styled.div`
 export const PE1ContentShortTitle = styled.div`
   width: 192px;
   display: flex;
-  border-bottom: 1px solid black;
   margin-bottom: 21px;
 
   h4 {
     font-weight: 400;
     color: #9a9a9a;
     margin: 0 0 7px 0;
+  }
+  select {
+    width: 100%;
   }
 `;
 

@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import {
   PEWrapper,
   PEInput,
@@ -21,6 +21,26 @@ import { faCalendar } from "@fortawesome/free-solid-svg-icons";
 const PlanEditor1 = () => {
   const titleRef = useRef();
   const [title, setTitle] = useState();
+  const [selectedContinent, setSelectedContinent] = useState("");
+  const [selectedCountry, setSelectedCountry] = useState("");
+  const [countries, setCountries] = useState([]);
+
+  useEffect(() => {
+    if (selectedContinent) {
+      fetch(`https://restcountries.com/v3.1/region/${selectedContinent}`)
+        .then((response) => response.json())
+        .then((data) => {
+          const countryNames = data.map((country) => country.name.common);
+          setCountries(countryNames);
+        })
+        .catch((error) => console.error("Error fetching countries:", error));
+    }
+  }, [selectedContinent]);
+
+  const handleContinentChange = (continent) => {
+    setSelectedContinent(continent);
+    setSelectedCountry("");
+  };
 
   return (
     <PEWrapper>
@@ -35,13 +55,40 @@ const PlanEditor1 = () => {
       <PE1ContentBox>
         <PEContentTitle>
           <FontAwesomeIcon icon={faLocationArrow} size="lg" />
-          <h4>여행할 국가를 입력하세요.</h4>
+          {selectedCountry ? (
+            <h4 style={{ color: "#2C2C2C" }}>
+              {selectedContinent}, {selectedCountry}
+            </h4>
+          ) : (
+            <h4>여행할 국가를 입력하세요.</h4>
+          )}
         </PEContentTitle>
         <PE1ContentShortTitle>
-          <h4>대륙</h4>
+          <select
+            value={selectedContinent}
+            onChange={(e) => handleContinentChange(e.target.value)}
+          >
+            <option value="">대륙을 선택하세요.</option>
+            <option value="Asia">아시아</option>
+            <option value="Europe">유럽</option>
+            <option value="North America">북아메리카</option>
+            <option value="South America">남아메리카</option>
+            <option value="Africa">아프리카</option>
+            <option value="Oceania">오세아니아</option>
+          </select>
         </PE1ContentShortTitle>
         <PE1ContentShortTitle>
-          <h4>나라</h4>
+          <select
+            value={selectedCountry}
+            onChange={(e) => setSelectedCountry(e.target.value)}
+          >
+            <option value="">나라를 선택하세요.</option>
+            {countries.map((country) => (
+              <option key={country} value={country}>
+                {country}
+              </option>
+            ))}
+          </select>
         </PE1ContentShortTitle>
       </PE1ContentBox>
 
