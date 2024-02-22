@@ -72,3 +72,17 @@ export const PE1ContentBox = styled.div`
   flex-direction: row;
   gap: 24px;
 `;
+
+export const BtnWrapper = styled.div`
+  height: 16px;
+`;
+
+export const PlusMinusBtn = styled.button`
+  border: 1px solid #ff6827;
+  border-radius: 4px;
+  background-color: white;
+
+  font-family: "Pretendard-Regular";
+  font-size: 16px;
+  color: #ff6827;
+`;
