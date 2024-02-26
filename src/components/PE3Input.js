@@ -7,8 +7,6 @@ import {
   BtnWrapper,
   PE3Circle,
 } from "./PE3InputStyle";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 const PE3Input = ({
   inputItems,
