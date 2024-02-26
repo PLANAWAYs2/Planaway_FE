@@ -8,7 +8,7 @@ import {
   PE3ContentBox,
   PE3ContentBoxLine,
   PE3Container,
-} from "./PlanEditor3Style";
+} from "./PlanEditor34Style";
 import PE3InputContainer from "../../components/PE3InputContainer";
 
 const PlanEditor3 = () => {

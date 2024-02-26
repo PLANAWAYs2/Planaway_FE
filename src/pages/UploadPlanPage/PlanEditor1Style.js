@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const UPWrapper = styled.div`
+  display: flex;
+`;
+
 export const PEWrapper = styled.div`
   margin: 73px 0 0 40px;
 
