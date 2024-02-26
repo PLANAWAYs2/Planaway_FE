@@ -38,10 +38,6 @@ export const PE3ContentTitle = styled.div`
   }
 `;
 
-export const PEMap = styled.div`
-  margin: 0 24px 52px 0;
-`;
-
 export const PEMapWrapper = styled.div`
   display: flex;
   align-items: flex-start;

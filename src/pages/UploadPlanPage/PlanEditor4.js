@@ -4,16 +4,12 @@ import {
   PE3Input,
   PEContents,
   PE3ContentTitle,
-  PEMap,
   PEMapWrapper,
   PE3ContentBox,
   PE3ContentBoxLine,
   PE3Container,
 } from "./PlanEditor3Style";
 import PE3InputContainer from "../../components/PE3InputContainer";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLocationArrow } from "@fortawesome/free-solid-svg-icons";
 
 const PlanEditor4 = () => {
   const titleRef = useRef();
