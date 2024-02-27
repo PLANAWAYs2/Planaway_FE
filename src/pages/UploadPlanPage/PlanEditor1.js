@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import { PEWrapper, PEInput } from "./PlanEditor1Style";
-import PE1Nation from "../../components/PE1Nation";
+import PE1NationContainer from "../../components/PE1NationContainer";
 import PE1Day from "../../components/PE1Day";
 
 const PlanEditor1 = () => {
@@ -41,7 +41,7 @@ const PlanEditor1 = () => {
         type="text"
       />
       <hr />
-      <PE1Nation />
+      <PE1NationContainer />
       <PE1Day />
     </PEWrapper>
   );

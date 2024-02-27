@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const PEContentTitle = styled.div`
   width: 404px;
   display: flex;
+  flex-direction: row;
   border-bottom: 1px solid black;
   margin-bottom: 21px;
 
