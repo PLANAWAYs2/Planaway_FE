@@ -37,6 +37,7 @@ export const BtnWrapper = styled.div`
 `;
 
 export const PlusMinusBtn = styled.button`
+  width: 23px;
   border: 1px solid #9a9a9a;
   border-radius: 4px;
   background-color: white;

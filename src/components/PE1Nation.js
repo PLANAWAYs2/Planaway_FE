@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 
 import {
-  PEContentTitle,
+  PE1ContentTitle,
   PE1ContentShortTitle,
   PE1ContentBox,
   PlusMinusBtn,
@@ -10,7 +10,6 @@ import {
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationArrow } from "@fortawesome/free-solid-svg-icons";
-import { faCalendar } from "@fortawesome/free-solid-svg-icons";
 
 const PE1Nation = ({
   inputItems,
@@ -59,16 +58,26 @@ const PE1Nation = ({
     <div>
       {inputItems.map((item, index) => (
         <PE1ContentBox>
-          <PEContentTitle>
-            <FontAwesomeIcon icon={faLocationArrow} size="lg" />
-            {selectedCountry ? (
-              <h4 style={{ color: "#2C2C2C" }}>
-                {selectedContinent}, {selectedCountry}
-              </h4>
-            ) : (
-              <h4>여행할 국가를 입력하세요.</h4>
+          <PE1ContentTitle
+            style={{ display: "flex", justifyContent: "space-between" }}
+          >
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <FontAwesomeIcon icon={faLocationArrow} size="lg" />
+              {selectedCountry ? (
+                <h4 style={{ color: "#2C2C2C" }}>
+                  {selectedContinent}, {selectedCountry}
+                </h4>
+              ) : (
+                <h4>여행할 국가를 입력하세요.</h4>
+              )}
+            </div>
+            {index > 0 && inputItems[index - 1] && (
+              <PlusMinusBtn onClick={() => DeleteInput(item.id)}>
+                -
+              </PlusMinusBtn>
             )}
-          </PEContentTitle>
+          </PE1ContentTitle>
+
           {!selectedContinent || !selectedCountry ? (
             <>
               <PE1ContentShortTitle>
