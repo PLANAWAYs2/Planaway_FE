@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+export const PE1DayBox = styled.div``;
+
 export const PEContentTitle = styled.div`
   width: 404px;
   display: flex;
@@ -12,7 +14,7 @@ export const PEContentTitle = styled.div`
 
   h4 {
     font-weight: 400;
-    color: #9a9a9a;
+    color: #2c2c2c;
     margin: 0 0 7px 0;
   }
 `;
