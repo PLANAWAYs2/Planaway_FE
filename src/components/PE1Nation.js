@@ -1,5 +1,4 @@
-import { useRef, useState, useEffect } from "react";
-
+import React, { useState, useEffect } from "react";
 import {
   PE1ContentTitle,
   PE1ContentShortTitle,
@@ -7,65 +6,67 @@ import {
   PlusMinusBtn,
   BtnWrapper,
 } from "./PE1NationStyle";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationArrow } from "@fortawesome/free-solid-svg-icons";
 
-const PE1Nation = ({
-  inputItems,
-  inputAddId,
-  AddInput,
-  DeleteInput,
-  onChange,
-}) => {
-  const titleRef = useRef();
-  const [title, setTitle] = useState("");
-  const [selectedContinent, setSelectedContinent] = useState("");
-  const [selectedCountry, setSelectedCountry] = useState("");
+const PE1Nation = ({ inputItems, AddInput, DeleteInput, onChange }) => {
   const [countries, setCountries] = useState([]);
   const [showPlusBtn, setShowPlusBtn] = useState(false); // 대륙과 나라가 선택되었을 때만 true가 됩니다.
 
   useEffect(() => {
-    if (selectedContinent && selectedCountry) {
-      setShowPlusBtn(true); // 대륙과 나라가 선택되었을 때 플러스 버튼을 표시합니다.
+    if (inputItems.some((item) => !item.item.continent || !item.item.country)) {
+      setShowPlusBtn(false);
     } else {
-      setShowPlusBtn(false); // 그 외의 경우에는 플러스 버튼을 숨깁니다.
+      setShowPlusBtn(true);
     }
-  }, [selectedContinent, selectedCountry]);
+  }, [inputItems]);
 
   useEffect(() => {
-    if (selectedContinent) {
-      fetch(`https://restcountries.com/v3.1/region/${selectedContinent}`)
-        .then((response) => response.json())
-        .then((data) => {
-          const countryNames = data.map((country) => country.name.common);
-          setCountries(countryNames);
-        })
-        .catch((error) => console.error("Error fetching countries:", error));
-    }
-  }, [selectedContinent]);
+    const fetchCountries = async (continent) => {
+      try {
+        const response = await fetch(
+          `https://restcountries.com/v3.1/region/${continent}`
+        );
+        const data = await response.json();
+        const countryNames = data.map((country) => country.name.common);
+        setCountries(countryNames);
+      } catch (error) {
+        console.error("Error fetching countries:", error);
+      }
+    };
 
-  const handleContinentChange = (continent) => {
-    setSelectedContinent(continent);
-    setSelectedCountry("");
+    inputItems.forEach((item) => {
+      if (
+        item.item.continent &&
+        !countries.some((country) => country === item.item.continent)
+      ) {
+        fetchCountries(item.item.continent);
+      }
+    });
+  }, [inputItems]);
+
+  const handleContinentChange = (e, id) => {
+    const { value } = e.target;
+    onChange(e, id, "continent");
   };
 
-  const handleCountryChange = (country) => {
-    setSelectedCountry(country);
+  const handleCountryChange = (e, id) => {
+    const { value } = e.target;
+    onChange(e, id, "country");
   };
 
   return (
     <div>
       {inputItems.map((item, index) => (
-        <PE1ContentBox>
+        <PE1ContentBox key={index}>
           <PE1ContentTitle
             style={{ display: "flex", justifyContent: "space-between" }}
           >
             <div style={{ display: "flex", alignItems: "center" }}>
               <FontAwesomeIcon icon={faLocationArrow} size="lg" />
-              {selectedCountry ? (
+              {item.item.country ? (
                 <h4 style={{ color: "#2C2C2C" }}>
-                  {selectedContinent}, {selectedCountry}
+                  {item.item.continent}, {item.item.country}
                 </h4>
               ) : (
                 <h4>여행할 국가를 입력하세요.</h4>
@@ -78,12 +79,12 @@ const PE1Nation = ({
             )}
           </PE1ContentTitle>
 
-          {!selectedContinent || !selectedCountry ? (
+          {!item.item.continent || !item.item.country ? (
             <>
               <PE1ContentShortTitle>
                 <select
-                  value={selectedContinent}
-                  onChange={(e) => handleContinentChange(e.target.value)}
+                  value={item.item.continent}
+                  onChange={(e) => handleContinentChange(e, item.id)}
                 >
                   <option value="">대륙을 선택하세요.</option>
                   <option value="Asia">아시아</option>
@@ -96,8 +97,8 @@ const PE1Nation = ({
               </PE1ContentShortTitle>
               <PE1ContentShortTitle>
                 <select
-                  value={selectedCountry}
-                  onChange={(e) => handleCountryChange(e.target.value)}
+                  value={item.item.country}
+                  onChange={(e) => handleCountryChange(e, item.id)}
                 >
                   <option value="">나라를 선택하세요.</option>
                   {countries.map((country) => (
@@ -111,7 +112,7 @@ const PE1Nation = ({
           ) : null}
           {index === inputItems.length - 1 && showPlusBtn && (
             <BtnWrapper>
-              <PlusMinusBtn onClick={() => AddInput()}>+</PlusMinusBtn>
+              <PlusMinusBtn onClick={AddInput}>+</PlusMinusBtn>
             </BtnWrapper>
           )}
         </PE1ContentBox>
