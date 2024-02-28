@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const PECity = styled.div`
+export const PE3City = styled.div`
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -22,7 +22,7 @@ export const PE3SearchForm = styled.form`
   }
 `;
 
-export const PEInputForm = styled.input`
+export const PE3InputForm = styled.input`
   border: none;
   width: 100%;
 
@@ -31,12 +31,12 @@ export const PEInputForm = styled.input`
   color: #2c2c2c;
 `;
 
-export const BtnWrapper = styled.div`
+export const PE3BtnWrapper = styled.div`
   display: flex;
   justify-content: center;
 `;
 
-export const PlusMinusBtn = styled.button`
+export const PE3PlusMinusBtn = styled.button`
   width: 23px;
   border: 1px solid #9a9a9a;
   border-radius: 4px;

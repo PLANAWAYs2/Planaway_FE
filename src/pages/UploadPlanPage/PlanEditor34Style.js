@@ -24,7 +24,7 @@ export const PE3Input = styled.input`
   font-weight: 600;
 `;
 
-export const PEContents = styled.div``;
+export const PE3Contents = styled.div``;
 
 export const PE3ContentTitle = styled.div`
   width: 192px;
@@ -38,7 +38,7 @@ export const PE3ContentTitle = styled.div`
   }
 `;
 
-export const PEMapWrapper = styled.div`
+export const PE3MapWrapper = styled.div`
   display: flex;
   align-items: flex-start;
 `;

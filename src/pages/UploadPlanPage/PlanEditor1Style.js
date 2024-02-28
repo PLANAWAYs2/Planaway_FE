@@ -4,7 +4,7 @@ export const UPWrapper = styled.div`
   display: flex;
 `;
 
-export const PEWrapper = styled.div`
+export const PE3Wrapper = styled.div`
   margin: 73px 0 0 40px;
 
   display: flex;
@@ -17,7 +17,7 @@ export const PEWrapper = styled.div`
   }
 `;
 
-export const PEInput = styled.input`
+export const PE3Input = styled.input`
   border: none;
   font-family: "Pretendard-Regular";
   color: #2c2c2c;

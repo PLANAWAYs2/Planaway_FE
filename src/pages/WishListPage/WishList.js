@@ -11,7 +11,7 @@ const WishList = () => {
       <Header />
       <Container>
         <div style={{ display: "flex" /*justifyContent: "space-between"*/ }}>
-          <div className="MPframe">
+          <div className="WLframe">
             <MyPageSideBar />
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>

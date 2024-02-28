@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import { PEWrapper, PEInput } from "./PlanEditor1Style";
+import { PE3Wrapper, PE3Input } from "./PlanEditor1Style";
 import PE1NationContainer from "./PE1NationContainer";
 import PE1Day from "./PE1Day";
 
@@ -32,8 +32,8 @@ const PlanEditor1 = () => {
   }, [selectedContinent]);
 
   return (
-    <PEWrapper>
-      <PEInput
+    <PE3Wrapper>
+      <PE3Input
         placeholder="제목을 입력하세요."
         value={title}
         ref={titleRef}
@@ -43,7 +43,7 @@ const PlanEditor1 = () => {
       <hr />
       <PE1NationContainer />
       <PE1Day />
-    </PEWrapper>
+    </PE3Wrapper>
   );
 };
 

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import {
-  PlusMinusBtn,
-  PEInputForm,
+  PE3PlusMinusBtn,
+  PE3InputForm,
   PE3SearchForm,
-  PECity,
-  BtnWrapper,
+  PE3City,
+  PE3BtnWrapper,
   PE3Circle,
 } from "./PE3InputStyle";
 
@@ -27,7 +27,7 @@ const PE3Input = ({
   };
 
   return (
-    <PECity>
+    <PE3City>
       {inputItems.map((item, index) => (
         <PE3SearchForm key={item.id}>
           <div style={{ display: "flex", alignItems: "center" }}>
@@ -35,7 +35,7 @@ const PE3Input = ({
               style={{ backgroundColor: circleColors[index] }}
               onClick={() => handleClickCircle(index)}
             />
-            <PEInputForm
+            <PE3InputForm
               name="one"
               type="text"
               defaultValue={item.one}
@@ -43,14 +43,16 @@ const PE3Input = ({
             />
           </div>
           {index > 0 && inputItems[index - 1] && (
-            <PlusMinusBtn onClick={() => DeleteInput(item.id)}>-</PlusMinusBtn>
+            <PE3PlusMinusBtn onClick={() => DeleteInput(item.id)}>
+              -
+            </PE3PlusMinusBtn>
           )}
         </PE3SearchForm>
       ))}
-      <BtnWrapper>
-        <PlusMinusBtn onClick={() => AddInput()}>+</PlusMinusBtn>
-      </BtnWrapper>
-    </PECity>
+      <PE3BtnWrapper>
+        <PE3PlusMinusBtn onClick={() => AddInput()}>+</PE3PlusMinusBtn>
+      </PE3BtnWrapper>
+    </PE3City>
   );
 };
 

@@ -4,7 +4,7 @@ import { differenceInDays } from "date-fns";
 import "react-date-range/dist/styles.css"; // 스타일 파일 불러오기
 import "react-date-range/dist/theme/default.css"; // 테마 파일 불러오기
 
-import { PE1DayBox, PEContentTitle } from "./PE1DayStyle";
+import { PE1DayBox, PE1ContentTitle } from "./PE1DayStyle";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar } from "@fortawesome/free-solid-svg-icons";
@@ -41,14 +41,14 @@ const PE1Day = ({
 
   return (
     <PE1DayBox>
-      <PEContentTitle>
+      <PE1ContentTitle>
         <FontAwesomeIcon icon={faCalendar} size="lg" />
         {/*<h4>여행할 기간을 입력하세요.</h4>*/}
         <h4>
           {`${selectionRange.startDate.toLocaleDateString()} - ${selectionRange.endDate.toLocaleDateString()}`}
           {` (${numNights}박 ${numDays}일)`}
         </h4>
-      </PEContentTitle>
+      </PE1ContentTitle>
       <DateRangePicker ranges={[selectionRange]} onChange={handleSelect} />
     </PE1DayBox>
   );

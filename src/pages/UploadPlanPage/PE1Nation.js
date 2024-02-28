@@ -3,8 +3,8 @@ import {
   PE1ContentTitle,
   PE1ContentShortTitle,
   PE1ContentBox,
-  PlusMinusBtn,
-  BtnWrapper,
+  PE1PlusMinusBtn,
+  PE1BtnWrapper,
 } from "./PE1NationStyle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationArrow } from "@fortawesome/free-solid-svg-icons";
@@ -73,9 +73,9 @@ const PE1Nation = ({ inputItems, AddInput, DeleteInput, onChange }) => {
               )}
             </div>
             {index > 0 && inputItems[index - 1] && (
-              <PlusMinusBtn onClick={() => DeleteInput(item.id)}>
+              <PE1PlusMinusBtn onClick={() => DeleteInput(item.id)}>
                 -
-              </PlusMinusBtn>
+              </PE1PlusMinusBtn>
             )}
           </PE1ContentTitle>
 
@@ -111,9 +111,9 @@ const PE1Nation = ({ inputItems, AddInput, DeleteInput, onChange }) => {
             </>
           ) : null}
           {index === inputItems.length - 1 && showPlusBtn && (
-            <BtnWrapper>
-              <PlusMinusBtn onClick={AddInput}>+</PlusMinusBtn>
-            </BtnWrapper>
+            <PE1BtnWrapper>
+              <PE1PlusMinusBtn onClick={AddInput}>+</PE1PlusMinusBtn>
+            </PE1BtnWrapper>
           )}
         </PE1ContentBox>
       ))}

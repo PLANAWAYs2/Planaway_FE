@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const PE1DayBox = styled.div``;
 
-export const PEContentTitle = styled.div`
+export const PE1ContentTitle = styled.div`
   width: 404px;
   display: flex;
   border-bottom: 1px solid black;

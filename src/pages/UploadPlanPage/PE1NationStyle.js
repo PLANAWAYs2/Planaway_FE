@@ -40,11 +40,11 @@ export const PE1ContentBox = styled.div`
   gap: 24px;
 `;
 
-export const BtnWrapper = styled.div`
+export const PE1BtnWrapper = styled.div`
   height: 16px;
 `;
 
-export const PlusMinusBtn = styled.button`
+export const PE1PlusMinusBtn = styled.button`
   width: 23px;
   border: 1px solid #ff6827;
   border-radius: 4px;

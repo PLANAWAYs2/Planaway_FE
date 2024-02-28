@@ -2,9 +2,9 @@ import { useRef, useState } from "react";
 import {
   PE3Wrapper,
   PE3Input,
-  PEContents,
+  PE3Contents,
   PE3ContentTitle,
-  PEMapWrapper,
+  PE3MapWrapper,
   PE3ContentBox,
   PE3ContentBoxLine,
   PE3Container,
@@ -32,11 +32,11 @@ const PlanEditor4 = () => {
               <h4>프랑스</h4>
             </PE3ContentTitle>
 
-            <PEContents>
-              <PEMapWrapper>
+            <PE3Contents>
+              <PE3MapWrapper>
                 <PE3InputContainer />
-              </PEMapWrapper>
-            </PEContents>
+              </PE3MapWrapper>
+            </PE3Contents>
           </PE3ContentBox>
         </PE3ContentBoxLine>
 
@@ -46,11 +46,11 @@ const PlanEditor4 = () => {
               <h4>이탈리아</h4>
             </PE3ContentTitle>
 
-            <PEContents>
-              <PEMapWrapper>
+            <PE3Contents>
+              <PE3MapWrapper>
                 <PE3InputContainer />
-              </PEMapWrapper>
-            </PEContents>
+              </PE3MapWrapper>
+            </PE3Contents>
           </PE3ContentBox>
         </PE3ContentBoxLine>
 
@@ -60,11 +60,11 @@ const PlanEditor4 = () => {
               <h4>독일</h4>
             </PE3ContentTitle>
 
-            <PEContents>
-              <PEMapWrapper>
+            <PE3Contents>
+              <PE3MapWrapper>
                 <PE3InputContainer />
-              </PEMapWrapper>
-            </PEContents>
+              </PE3MapWrapper>
+            </PE3Contents>
           </PE3ContentBox>
         </PE3ContentBoxLine>
 
@@ -74,11 +74,11 @@ const PlanEditor4 = () => {
               <h4>면세점</h4>
             </PE3ContentTitle>
 
-            <PEContents>
-              <PEMapWrapper>
+            <PE3Contents>
+              <PE3MapWrapper>
                 <PE3InputContainer />
-              </PEMapWrapper>
-            </PEContents>
+              </PE3MapWrapper>
+            </PE3Contents>
           </PE3ContentBox>
         </PE3ContentBoxLine>
       </PE3Container>

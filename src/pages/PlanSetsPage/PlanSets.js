@@ -11,7 +11,7 @@ const PlanSets = () => {
       <Header />
       <Container>
         <div style={{ display: "flex" /*justifyContent: "space-between"*/ }}>
-          <div className="MPframe">
+          <div className="PSframe">
             <MyPageSideBar />
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>

@@ -2,9 +2,9 @@ import { useRef, useState } from "react";
 import {
   PE3Wrapper,
   PE3Input,
-  PEContents,
+  PE3Contents,
   PE3ContentTitle,
-  PEMapWrapper,
+  PE3MapWrapper,
   PE3ContentBox,
   PE3ContentBoxLine,
   PE3Container,
@@ -32,11 +32,11 @@ const PlanEditor3 = () => {
               <h4>항공 관련</h4>
             </PE3ContentTitle>
 
-            <PEContents>
-              <PEMapWrapper>
+            <PE3Contents>
+              <PE3MapWrapper>
                 <PE3InputContainer />
-              </PEMapWrapper>
-            </PEContents>
+              </PE3MapWrapper>
+            </PE3Contents>
           </PE3ContentBox>
 
           <PE3ContentBox>
@@ -44,11 +44,11 @@ const PlanEditor3 = () => {
               <h4>생활</h4>
             </PE3ContentTitle>
 
-            <PEContents>
-              <PEMapWrapper>
+            <PE3Contents>
+              <PE3MapWrapper>
                 <PE3InputContainer />
-              </PEMapWrapper>
-            </PEContents>
+              </PE3MapWrapper>
+            </PE3Contents>
           </PE3ContentBox>
         </PE3ContentBoxLine>
 
@@ -58,11 +58,11 @@ const PlanEditor3 = () => {
               <h4>전자 기기</h4>
             </PE3ContentTitle>
 
-            <PEContents>
-              <PEMapWrapper>
+            <PE3Contents>
+              <PE3MapWrapper>
                 <PE3InputContainer />
-              </PEMapWrapper>
-            </PEContents>
+              </PE3MapWrapper>
+            </PE3Contents>
           </PE3ContentBox>
 
           <PE3ContentBox>
@@ -70,11 +70,11 @@ const PlanEditor3 = () => {
               <h4>기타</h4>
             </PE3ContentTitle>
 
-            <PEContents>
-              <PEMapWrapper>
+            <PE3Contents>
+              <PE3MapWrapper>
                 <PE3InputContainer />
-              </PEMapWrapper>
-            </PEContents>
+              </PE3MapWrapper>
+            </PE3Contents>
           </PE3ContentBox>
         </PE3ContentBoxLine>
 
@@ -84,11 +84,11 @@ const PlanEditor3 = () => {
               <h4>샤워 화장</h4>
             </PE3ContentTitle>
 
-            <PEContents>
-              <PEMapWrapper>
+            <PE3Contents>
+              <PE3MapWrapper>
                 <PE3InputContainer />
-              </PEMapWrapper>
-            </PEContents>
+              </PE3MapWrapper>
+            </PE3Contents>
           </PE3ContentBox>
 
           <PE3ContentBox>
@@ -96,11 +96,11 @@ const PlanEditor3 = () => {
               <h4>추가로 작성하세요</h4>
             </PE3ContentTitle>
 
-            <PEContents>
-              <PEMapWrapper>
+            <PE3Contents>
+              <PE3MapWrapper>
                 <PE3InputContainer />
-              </PEMapWrapper>
-            </PEContents>
+              </PE3MapWrapper>
+            </PE3Contents>
           </PE3ContentBox>
         </PE3ContentBoxLine>
 
@@ -110,11 +110,11 @@ const PlanEditor3 = () => {
               <h4>의류</h4>
             </PE3ContentTitle>
 
-            <PEContents>
-              <PEMapWrapper>
+            <PE3Contents>
+              <PE3MapWrapper>
                 <PE3InputContainer />
-              </PEMapWrapper>
-            </PEContents>
+              </PE3MapWrapper>
+            </PE3Contents>
           </PE3ContentBox>
         </PE3ContentBoxLine>
       </PE3Container>
