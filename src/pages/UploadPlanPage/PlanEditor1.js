@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import { PEWrapper, PEInput } from "./PlanEditor1Style";
-import PE1NationContainer from "../../components/PE1NationContainer";
-import PE1Day from "../../components/PE1Day";
+import PE1NationContainer from "./PE1NationContainer";
+import PE1Day from "./PE1Day";
 
 const PlanEditor1 = () => {
   const titleRef = useRef();

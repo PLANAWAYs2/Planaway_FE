@@ -9,7 +9,7 @@ import {
   PE3ContentBoxLine,
   PE3Container,
 } from "./PlanEditor34Style";
-import PE3InputContainer from "../../components/PE3InputContainer";
+import PE3InputContainer from "./PE3InputContainer";
 
 const PlanEditor3 = () => {
   const titleRef = useRef();
