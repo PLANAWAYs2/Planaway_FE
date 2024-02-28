@@ -1,4 +1,4 @@
-import { React, useContext, useRef, useState } from 'react';
+import { React, useContext, useRef, useState } from "react";
 import {
   HeaderWrapper,
   Nav,
@@ -10,18 +10,18 @@ import {
   HInput,
   NavBtn,
   HButton,
-} from './HeaderStyle';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import { useNavigate } from 'react-router-dom';
-import { DispatchContext } from '../Router';
+} from "./HeaderStyle";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
+import { DispatchContext } from "../Router";
 
 const Header = () => {
   const { onSearch } = useContext(DispatchContext);
 
   const searchRef = useRef();
   const navigate = useNavigate();
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleSubmit = () => {
@@ -31,14 +31,14 @@ const Header = () => {
       searchRef.current.focus();
       return;
     }
-    navigate('/search');
+    navigate("/search");
   };
 
   const handleUserClick = () => {
     if (isLoggedIn) {
-      navigate('/userinfo');
+      navigate("/userinfo");
     } else {
-      navigate('/login');
+      navigate("/login");
     }
   };
 
@@ -49,7 +49,7 @@ const Header = () => {
           <NavLink to="/" activestyle="true">
             <img
               className="logo"
-              src={process.env.PUBLIC_URL + '/assets/logo.png'}
+              src={process.env.PUBLIC_URL + "/assets/logo.png"}
               alt="Logo"
             />
           </NavLink>
@@ -65,7 +65,7 @@ const Header = () => {
 
         <NavMenu2>
           <MenuWrapper>
-            <NavLink to="/uploadplan" activestyle="true">
+            <NavLink to="/uploadplan1" activestyle="true">
               여행 계획 시작하기
             </NavLink>
             <NavLink to="/planlist" activestyle="true">
