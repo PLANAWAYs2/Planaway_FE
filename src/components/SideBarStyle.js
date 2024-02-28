@@ -11,6 +11,7 @@ export const SBWrapper = styled.div`
 export const SBLink = styled(Link)`
   border: none;
   border-bottom: 1px solid #9a9a9a;
+  width: 172px;
   font-family: 'Pretendard-Regular';
   font-size: 16px;
   color: #9a9a9a;

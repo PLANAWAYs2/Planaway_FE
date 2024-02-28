@@ -10,26 +10,26 @@ const PlanSideBar = () => {
   return (
     <SBWrapper>
       <SBLink
-        to="/9-1"
-        isActive={(match, location) => location.pathname === "/9-1"}
+        to="/uploadplan1"
+        isActive={(match, location) => location.pathname === "/uploadplan1"}
       >
         여행 정보
       </SBLink>
       <SBLink
-        to="/9-2"
-        isActive={(match, location) => location.pathname === "/9-2"}
+        to="/uploadplan2"
+        isActive={(match, location) => location.pathname === "/uploadplan2"}
       >
         여행 상세정보
       </SBLink>
       <SBLink
-        to="/9-3"
-        isActive={(match, location) => location.pathname === "/9-3"}
+        to="/uploadplan3"
+        isActive={(match, location) => location.pathname === "/uploadplan3"}
       >
         여행 준비물 리스트
       </SBLink>
       <SBLink
-        to="/9-4"
-        isActive={(match, location) => location.pathname === "/9-4"}
+        to="/uploadplan4"
+        isActive={(match, location) => location.pathname === "/uploadplan4"}
       >
         여행 기념품 리스트
       </SBLink>
