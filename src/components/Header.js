@@ -28,6 +28,7 @@ const Header = () => {
       searchRef.current.focus();
       return;
     }
+    navigate('/search');
   };
 
   const handleUserClick = () => {

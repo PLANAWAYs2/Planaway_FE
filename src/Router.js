@@ -10,6 +10,7 @@ import UploadPlan from './pages/UploadPlanPage/UploadPlan';
 import UserInfo from './pages/UserInfoPage/UserInfo';
 import ViewPlan from './pages/ViewPlanPage/ViewPlan';
 import WishList from './pages/WishListPage/WishList';
+import SearchPage from './pages/SearchPage/SearchPage';
 
 const Router = () => {
   return (
@@ -25,6 +26,7 @@ const Router = () => {
         <Route path="/userinfo" element={<UserInfo />} />
         <Route path="/viewplan" element={<ViewPlan />} />
         <Route path="/wishlist" element={<WishList />} />
+        <Route path="/search" element={<SearchPage />} />
       </Routes>
     </BrowserRouter>
   );
