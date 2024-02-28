@@ -119,6 +119,12 @@
   font-size: 16px;
   cursor: pointer;
 }
+.LSignup button:hover,
+.LFindPw button:hover,
+.LFindId button:hover {
+  text-decoration: underline;
+}
+
 .Lline1 {
   margin: auto;
   border: 1px solid #efefef;

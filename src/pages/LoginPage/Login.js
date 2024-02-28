@@ -37,6 +37,14 @@ const Login = () => {
     navigate('/signUp');
   };
 
+  const handleFindId = () => {
+    navigate('/findId');
+  };
+
+  const handleFindPw = () => {
+    navigate('/findPw');
+  };
+
   return (
     <>
       <Header />
@@ -76,11 +84,11 @@ const Login = () => {
               </div>
               <div className="LFindId">
                 <span>혹시 아이디를 잊으셨나요?</span>
-                <button>아이디 찾기</button>
+                <button onClick={handleFindId}>아이디 찾기</button>
               </div>
               <div className="LFindPw">
                 <span>혹시 비밀번호를 잊으셨나요?</span>
-                <button>비밀번호 찾기</button>
+                <button onClick={handleFindPw}>비밀번호 찾기</button>
               </div>
             </div>
           </div>

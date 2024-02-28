@@ -11,6 +11,8 @@ import UserInfo from './pages/UserInfoPage/UserInfo';
 import ViewPlan from './pages/ViewPlanPage/ViewPlan';
 import WishList from './pages/WishListPage/WishList';
 import SearchPage from './pages/SearchPage/SearchPage';
+import FindId from './pages/FindInfoPage/FindId';
+import FindPw from './pages/FindInfoPage/FindPw';
 
 export const SearchKeyword = React.createContext();
 export const DispatchContext = React.createContext();
@@ -19,6 +21,7 @@ const Router = () => {
   const onSearch = (keywordInput) => {
     setKeyword(keywordInput);
   };
+
   return (
     <SearchKeyword.Provider value={keyword}>
       <DispatchContext.Provider value={{ onSearch }}>
@@ -35,6 +38,8 @@ const Router = () => {
             <Route path="/viewplan" element={<ViewPlan />} />
             <Route path="/wishlist" element={<WishList />} />
             <Route path="/search" element={<SearchPage />} />
+            <Route path="/findId" element={<FindId />} />
+            <Route path="/findPw" element={<FindPw />} />
           </Routes>
         </BrowserRouter>
       </DispatchContext.Provider>
