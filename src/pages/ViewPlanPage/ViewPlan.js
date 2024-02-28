@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import { Container } from '../../Layout';
 import Header from '../../components/Header';
+import Card from '../../components/Card';
 import Dropdown from './Dropdown';
 import './ViewPlan.css';
 
@@ -26,7 +27,7 @@ const ViewPlan = () => {
             <div className="VPSortingText">
               <span>10</span>개의 여행일기가 있습니다.
             </div>
-            <div className="v">
+            <div>
               <button onClick={handleClickDropdown} className="DDropdownBtn">
                 {DropdownView ? (
                   <img src={process.env.PUBLIC_URL + '/assets/ArrowUp.png'} />
@@ -44,18 +45,8 @@ const ViewPlan = () => {
               </Dropdown>
             </div>
           </div>
-          <div className="VPCard">
-            <div className="VPCard_1"></div>
-            <div className="VPCard_2"></div>
-            <div className="VPCard_3"></div>
-            <div className="VPCard_4"></div>
-            <div className="VPCard_5"></div>
-            <div className="VPCard_6"></div>
-            <div className="VPCard_7"></div>
-            <div className="VPCard_8"></div>
-            <div className="VPCard_9"></div>
-            <div className="VPCard_10"></div>
-          </div>
+
+          <Card />
         </div>
       </Container>
     </>

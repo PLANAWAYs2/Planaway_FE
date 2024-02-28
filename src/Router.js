@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Main from './pages/MainPage/Main';
 import Login from './pages/LoginPage/Login';
@@ -12,23 +12,33 @@ import ViewPlan from './pages/ViewPlanPage/ViewPlan';
 import WishList from './pages/WishListPage/WishList';
 import SearchPage from './pages/SearchPage/SearchPage';
 
+export const SearchKeyword = React.createContext();
+export const DispatchContext = React.createContext();
 const Router = () => {
+  const [keyword, setKeyword] = useState();
+  const onSearch = (keywordInput) => {
+    setKeyword(keywordInput);
+  };
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/plandetail" element={<PlanDetail />} />
-        <Route path="/planlist" element={<PlanList />} />
-        <Route path="/plansets" element={<PlanSets />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/uploadplan" element={<UploadPlan />} />
-        <Route path="/userinfo" element={<UserInfo />} />
-        <Route path="/viewplan" element={<ViewPlan />} />
-        <Route path="/wishlist" element={<WishList />} />
-        <Route path="/search" element={<SearchPage />} />
-      </Routes>
-    </BrowserRouter>
+    <SearchKeyword.Provider value={keyword}>
+      <DispatchContext.Provider value={{ onSearch }}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/plandetail" element={<PlanDetail />} />
+            <Route path="/planlist" element={<PlanList />} />
+            <Route path="/plansets" element={<PlanSets />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/uploadplan" element={<UploadPlan />} />
+            <Route path="/userinfo" element={<UserInfo />} />
+            <Route path="/viewplan" element={<ViewPlan />} />
+            <Route path="/wishlist" element={<WishList />} />
+            <Route path="/search" element={<SearchPage />} />
+          </Routes>
+        </BrowserRouter>
+      </DispatchContext.Provider>
+    </SearchKeyword.Provider>
   );
 };
 
