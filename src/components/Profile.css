@@ -48,12 +48,18 @@
 .ProfileName {
   font-family: Pretendard-SemiBold;
   font-size: 24px;
+  display: flex;
+  justify-content: center;
 }
 .ProfileEdit {
   margin-top: 14px;
+  cursor: pointer;
+  width: 100px;
+  display: flex;
+  justify-content: space-between;
 }
 .ProfileEdit span {
   font-family: Pretendard-Medium;
   font-size: 16px;
-  margin-left: 6px;
+  margin-left: 8px;
 }
