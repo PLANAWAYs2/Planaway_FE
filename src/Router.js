@@ -14,7 +14,7 @@ import UserInfo from "./pages/UserInfoPage/UserInfo";
 import ViewPlan from "./pages/ViewPlanPage/ViewPlan";
 import WishList from "./pages/WishListPage/WishList";
 import SearchPage from "./pages/SearchPage/SearchPage";
-import FindId from "./pages/FindInfoPage/FindId";
+import FindId from "./pages/FindInfoPage/FindID";
 import FindPw from "./pages/FindInfoPage/FindPw";
 
 export const SearchKeyword = React.createContext();
