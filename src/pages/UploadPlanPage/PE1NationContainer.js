@@ -6,33 +6,15 @@ const PE1NationContainer = () => {
     {
       id: 0,
       item: {
-        continent: "", // 초기 대륙 값
-        country: "", // 초기 나라 값
+        continent: "",
+        country: "",
       },
     },
   ]);
-  const [inputAddId, setInputAddId] = useState(1);
 
-  const AddInput = () => {
-    const newInputItem = {
-      id: inputAddId,
-      item: {
-        continent: "", // 새로운 드롭다운의 초기 대륙 값
-        country: "", // 새로운 드롭다운의 초기 나라 값
-      },
-    };
-    setInputItems([...inputItems, newInputItem]);
-    setInputAddId(inputAddId + 1);
-  };
-
-  const DeleteInput = (id) => {
-    setInputItems(inputItems.filter((item) => item.id !== id));
-  };
-
-  const onChange = (e, id, field) => {
-    const { value } = e.target;
-    setInputItems(
-      inputItems.map((item) =>
+  const handleInputChange = (id, field, value) => {
+    setInputItems((prevInputItems) =>
+      prevInputItems.map((item) =>
         item.id === id
           ? { ...item, item: { ...item.item, [field]: value } }
           : item
@@ -40,14 +22,32 @@ const PE1NationContainer = () => {
     );
   };
 
+  const handleAddInput = () => {
+    setInputItems((prevInputItems) => [
+      ...prevInputItems,
+      {
+        id: prevInputItems.length,
+        item: {
+          continent: "",
+          country: "",
+        },
+      },
+    ]);
+  };
+
+  const handleDeleteInput = (id) => {
+    setInputItems((prevInputItems) =>
+      prevInputItems.filter((item) => item.id !== id)
+    );
+  };
+
   return (
     <div>
       <PE1Nation
         inputItems={inputItems}
-        inputAddId={inputAddId}
-        AddInput={AddInput}
-        DeleteInput={DeleteInput}
-        onChange={onChange}
+        onInputChange={handleInputChange}
+        onAddInput={handleAddInput}
+        onDeleteInput={handleDeleteInput}
       />
     </div>
   );
