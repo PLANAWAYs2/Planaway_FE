@@ -2,7 +2,12 @@ import { useState, useRef } from "react";
 import Header from "../../components/Header.js";
 import PlanSideBar from "../../components/PlanSideBar.js";
 import { Container } from "../../Layout.js";
-import { UPWrapper, PE3Input, PE3Wrapper } from "./PlanEditor1Style.js";
+import {
+  UPWrapper,
+  PE3Input,
+  PE3Wrapper,
+  PEWrapper,
+} from "./PlanEditor1Style.js";
 import PlanEditor1 from "./PlanEditor1.js";
 import PlanEditor2 from "./PlanEditor2.js";
 import PlanEditor3 from "./PlanEditor3.js";
@@ -37,10 +42,19 @@ const UploadPlan = () => {
               type="text"
             />
             <hr />
-            {active1 && <PlanEditor1 />}
-            {active2 && <PlanEditor2 />}
-            {active3 && <PlanEditor3 />}
-            {active4 && <PlanEditor4 />}
+            <PEWrapper isActive={active1}>
+              <PlanEditor1 />
+            </PEWrapper>
+
+            <PEWrapper isActive={active2}>
+              <PlanEditor2 />
+            </PEWrapper>
+            <PEWrapper isActive={active3}>
+              <PlanEditor3 />
+            </PEWrapper>
+            <PEWrapper isActive={active4}>
+              <PlanEditor4 />
+            </PEWrapper>
           </PE3Wrapper>
         </UPWrapper>
       </Container>

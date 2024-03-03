@@ -24,3 +24,7 @@ export const PE3Input = styled.input`
   font-size: 36px;
   font-weight: 600;
 `;
+
+export const PEWrapper = styled.div`
+  display: ${(props) => (props.isActive ? "block" : "none")};
+`;
