@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   ODPWrapper,
   ODPCityUl,
@@ -11,15 +11,18 @@ import {
   ODPDetailDay,
   ODPOpenBtn,
   DetailText,
-} from './PlanEditor2Style';
+} from "./PlanEditor2Style";
 
-const OpenDetailPlan = ({
+const PE2OpenDetail = ({
   inputItems,
   dayDetails,
   onChange,
   onChangeDetail,
   toggleDayPlan,
 }) => {
+  console.log("inputItems in OpenDetailPlan:", inputItems);
+  console.log("inputItems in OpenDetailPlan:", dayDetails);
+
   const generateInputForms = () => {
     return dayDetails.map((detail, index) => (
       <React.Fragment key={index}>
@@ -32,7 +35,7 @@ const OpenDetailPlan = ({
             onChange={(e) => onChangeDetail(e, detail.day)}
           />
           <ODPOpenBtn onClick={() => toggleDayPlan(index)}>
-            {detail.toggle ? '닫기' : '열기'}
+            {detail.toggle ? "닫기" : "열기"}
           </ODPOpenBtn>
         </ODPDetailDay>
 
@@ -70,4 +73,4 @@ const OpenDetailPlan = ({
   );
 };
 
-export default OpenDetailPlan;
+export default PE2OpenDetail;

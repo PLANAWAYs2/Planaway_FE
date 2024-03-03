@@ -8,13 +8,7 @@ import {
   PE3Circle,
 } from "./PE3InputStyle";
 
-const PE3Input = ({
-  inputItems,
-  inputAddId,
-  AddInput,
-  DeleteInput,
-  onChange,
-}) => {
+const PE3Input = ({ inputItems, AddInput, DeleteInput, onChange }) => {
   const [circleColors, setCircleColors] = useState(
     Array(inputItems.length).fill("#d9d9d9")
   );

@@ -1,28 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { DateRangePicker } from "react-date-range";
 import { differenceInDays } from "date-fns";
-import "react-date-range/dist/styles.css"; // 스타일 파일 불러오기
-import "react-date-range/dist/theme/default.css"; // 테마 파일 불러오기
+import "react-date-range/dist/styles.css";
+import "react-date-range/dist/theme/default.css";
 
 import { PE1DayBox, PE1ContentTitle } from "./PE1DayStyle";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar } from "@fortawesome/free-solid-svg-icons";
 
-const PE1Day = ({
-  inputItems,
-  inputAddId,
-  AddInput,
-  DeleteInput,
-  onChange,
-}) => {
+const PE1Day = ({ numDays, setNumDays }) => {
   const [selectionRange, setSelectionRange] = useState({
     startDate: new Date(),
     endDate: new Date(),
     key: "selection",
   });
   const [numNights, setNumNights] = useState(0);
-  const [numDays, setNumDays] = useState(0);
 
   useEffect(() => {
     const nights = differenceInDays(

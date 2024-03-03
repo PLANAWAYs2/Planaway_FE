@@ -1,21 +1,15 @@
-import React from 'react';
+import React from "react";
 import {
   PlusMinusBtn,
   PEInputForm,
   PESearchForm,
   PECity,
   BtnWrapper,
-} from './PECityInputStyle';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+} from "./PECityInputStyle";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
-const PECityInput = ({
-  inputItems,
-  inputAddId,
-  AddInput,
-  DeleteInput,
-  onChange,
-}) => {
+const PE2CityInput = ({ inputItems, AddInput, DeleteInput, onChange }) => {
   return (
     <PECity>
       {inputItems.map((item, index) => {
@@ -35,7 +29,7 @@ const PECityInput = ({
                 -
               </PlusMinusBtn>
             ) : (
-              ''
+              ""
             )}
           </PESearchForm>
         );
@@ -49,4 +43,4 @@ const PECityInput = ({
   );
 };
 
-export default PECityInput;
+export default PE2CityInput;
