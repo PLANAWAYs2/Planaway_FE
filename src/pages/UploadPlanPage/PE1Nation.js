@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   PE1ContentTitle,
   PE1ContentShortTitle,
@@ -9,9 +9,18 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationArrow } from "@fortawesome/free-solid-svg-icons";
 
-const PE1Nation = ({ inputItems, AddInput, DeleteInput, onChange }) => {
+const PE1Nation = ({
+  inputItems,
+  onInputChange,
+  onAddInput,
+  onDeleteInput,
+}) => {
   const [countries, setCountries] = useState([]);
-  const [showPlusBtn, setShowPlusBtn] = useState(false); // 대륙과 나라가 선택되었을 때만 true가 됩니다.
+  const [showPlusBtn, setShowPlusBtn] = useState(false);
+
+  useEffect(() => {
+    console.log("Input items:", inputItems); // 배열 콘솔 출력 추가
+  }, [inputItems]);
 
   useEffect(() => {
     if (inputItems.some((item) => !item.item.continent || !item.item.country)) {
@@ -47,12 +56,12 @@ const PE1Nation = ({ inputItems, AddInput, DeleteInput, onChange }) => {
 
   const handleContinentChange = (e, id) => {
     const { value } = e.target;
-    onChange(e, id, "continent");
+    onInputChange(id, "continent", value);
   };
 
   const handleCountryChange = (e, id) => {
     const { value } = e.target;
-    onChange(e, id, "country");
+    onInputChange(id, "country", value);
   };
 
   return (
@@ -73,7 +82,7 @@ const PE1Nation = ({ inputItems, AddInput, DeleteInput, onChange }) => {
               )}
             </div>
             {index > 0 && inputItems[index - 1] && (
-              <PE1PlusMinusBtn onClick={() => DeleteInput(item.id)}>
+              <PE1PlusMinusBtn onClick={() => onDeleteInput(item.id)}>
                 -
               </PE1PlusMinusBtn>
             )}
@@ -112,7 +121,7 @@ const PE1Nation = ({ inputItems, AddInput, DeleteInput, onChange }) => {
           ) : null}
           {index === inputItems.length - 1 && showPlusBtn && (
             <PE1BtnWrapper>
-              <PE1PlusMinusBtn onClick={AddInput}>+</PE1PlusMinusBtn>
+              <PE1PlusMinusBtn onClick={onAddInput}>+</PE1PlusMinusBtn>
             </PE1BtnWrapper>
           )}
         </PE1ContentBox>
