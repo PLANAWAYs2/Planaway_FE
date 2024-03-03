@@ -48,11 +48,13 @@
   align-items: center;
   margin-bottom: 30px;
 }
-
+.FPInput .IInputTextForm {
+  margin-left: 10px;
+}
 .FPText {
   font-size: 24px;
   font-weight: 600;
-  margin-top: 150px;
+  margin-top: 71px;
   margin-bottom: 30px;
 }
 .FPCheckBtn button {

@@ -1,11 +1,19 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from '../../components/Header';
 import Input from '../../components/Input';
 import { Container } from '../../Layout';
+
 import './FindPw.css';
 const FindPw = () => {
   const [stateMsg, setStateMsg] = useState('');
 
+  const navigate = useNavigate();
+
+  const onChangePw = () => {
+    //새 비밀번호 데이터베이스에 저장
+    navigate('/login');
+  };
   return (
     <>
       <Header />;
@@ -27,14 +35,21 @@ const FindPw = () => {
               setStateMsg={setStateMsg}
               btnState="true"
             />
-            <Input text="새 비밀번호" type="password" btnState="false" />
+            <Input
+              text="새 비밀번호"
+              type="password"
+              setStateMsg={setStateMsg}
+              btnText="비밀번호 확인"
+              btnState="true"
+            />
             <Input
               text="새 비밀번호 확인"
               type="passwordCheck"
+              setStateMsg={setStateMsg}
               btnState="false"
             />
             <div className="FPCheckBtn">
-              <button>비밀번호 변경하기</button>
+              <button onClick={onChangePw}>비밀번호 변경하기</button>
             </div>
           </div>
           <div className="FPDescription">{stateMsg}</div>

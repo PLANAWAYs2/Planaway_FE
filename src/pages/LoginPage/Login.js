@@ -3,8 +3,11 @@ import { useState, useRef } from 'react';
 import Header from '../../components/Header';
 import { Container } from '../../Layout';
 import { useNavigate } from 'react-router-dom';
+import Input from '../../components/Input';
 
 const Login = () => {
+  const [stateMsg, setStateMsg] = useState('');
+
   const idInput = useRef();
   const passwordInput = useRef();
   const navigate = useNavigate();
@@ -14,23 +17,8 @@ const Login = () => {
     password: '',
   });
 
-  const handleChangeState = (e) => {
-    setState({
-      ...state,
-      [e.target.name]: e.target.value,
-    });
-  };
-
   const handleSubmit = (e) => {
-    if (state.id.length < 1) {
-      idInput.current.focus();
-      return;
-    }
-
-    if (state.password.length < 1) {
-      passwordInput.current.focus();
-      return;
-    }
+    navigate('/');
   };
 
   const handleSignUp = () => {
@@ -55,21 +43,19 @@ const Login = () => {
             <div className="LidPwBtn">
               <div className="LidPw">
                 <div className="Lid">
-                  <span> 아이디 </span>
-                  <input
-                    ref={idInput}
-                    name="id"
-                    value={state.id}
-                    onChange={handleChangeState}
+                  <Input
+                    text="아이디"
+                    type="id"
+                    setStateMsg={setStateMsg}
+                    btnState="false"
                   />
                 </div>
                 <div className="Lpassword">
-                  <span> 비밀번호</span>
-                  <input
-                    ref={passwordInput}
-                    name="password"
-                    value={state.content}
-                    onChange={handleChangeState}
+                  <Input
+                    text="비밀번호"
+                    type="password"
+                    setStateMsg={setStateMsg}
+                    btnState="false"
                   />
                 </div>
               </div>
