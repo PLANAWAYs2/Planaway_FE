@@ -1,13 +1,17 @@
 import { useState, useEffect } from "react";
-import { PE3Wrapper, PE3Input } from "./PlanEditor1Style";
 import PE1NationContainer from "./PE1NationContainer";
 import PE1Day from "./PE1Day";
 
-const PlanEditor1 = () => {
-  const [selectedContinent, setSelectedContinent] = useState("");
-  const [selectedCountry, setSelectedCountry] = useState("");
+const PlanEditor1 = ({
+  selectedCountry,
+  selectedContinent,
+  numDays,
+  setNumDays,
+}) => {
   const [countries, setCountries] = useState([]);
   const [showPlusBtn, setShowPlusBtn] = useState(false); // 대륙과 나라가 선택되었을 때만 true가 됩니다.
+
+  console.log("inputItems in OpenDetailPlan:", selectedCountry);
 
   useEffect(() => {
     if (selectedContinent && selectedCountry) {
@@ -32,7 +36,7 @@ const PlanEditor1 = () => {
   return (
     <>
       <PE1NationContainer />
-      <PE1Day />
+      <PE1Day numDays={numDays} setNumDays={setNumDays} />
     </>
   );
 };

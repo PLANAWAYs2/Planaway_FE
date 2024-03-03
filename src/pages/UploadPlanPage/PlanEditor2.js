@@ -13,7 +13,7 @@ import PE2CityInput from "./PE2CityInput";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationArrow } from "@fortawesome/free-solid-svg-icons";
 
-const PlanEditor2 = () => {
+const PlanEditor2 = ({ numDays }) => {
   const API_KEY = "AIzaSyDedTPh8y0kQKaWqEGKnPwXAMXhLeENOHU";
 
   const [detailPlanOpen, setDetailPlanOpen] = useState(false);
@@ -83,14 +83,14 @@ const PlanEditor2 = () => {
 
   useEffect(() => {
     setDayDetails(
-      Array.from({ length: 10 }, (_, index) => ({
+      Array.from({ length: numDays }, (_, index) => ({
         day: index + 1,
         content: "",
         detail: "",
         toggle: false,
       }))
     );
-  }, []); //length: 10으로 기본 만들어놨고 나중에 9-1에서 몇박 몇일 가져올거야
+  }, [numDays]); //length: 10으로 기본 만들어놨고 나중에 9-1에서 몇박 몇일 가져올거야
 
   useEffect(() => {
     if (totalDays >= 10) {
