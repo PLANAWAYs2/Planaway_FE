@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const UPWrapper = styled.div`
   display: flex;
@@ -18,7 +18,7 @@ export const PEWrapper = styled.div`
 
 export const PETitleInput = styled.input`
   border: none;
-  font-family: "Pretendard-Regular";
+  font-family: 'Pretendard-Regular';
   color: #2c2c2c;
   font-size: 36px;
   font-weight: 600;
@@ -67,7 +67,7 @@ export const OpenDetailBtn = styled.button`
   background-color: #ff6827;
   cursor: pointer;
 
-  font-family: "Pretendard-Regular";
+  font-family: 'Pretendard-Regular';
   font-size: 14px;
   color: #ffffff;
 `;
@@ -141,7 +141,7 @@ export const ODPInputForm = styled.input`
   padding-left: 8px;
   width: 80%;
 
-  font-family: "Pretendard-Regular";
+  font-family: 'Pretendard-Regular';
   font-size: 16px;
   color: #2c2c2c;
 `;
@@ -151,7 +151,7 @@ export const ODPOpenBtn = styled.button`
   background-color: white;
   cursor: pointer;
 
-  font-family: "Pretendard-Regular";
+  font-family: 'Pretendard-Regular';
   font-size: 16px;
   color: #9b9b9b;
 `;
@@ -164,6 +164,6 @@ export const DetailText = styled.textarea`
   border: 1px solid #efefef;
   outline-color: #efefef;
 
-  font-family: "Pretendard-Regular";
+  font-family: 'Pretendard-Regular';
   font-size: 16px;
 `;

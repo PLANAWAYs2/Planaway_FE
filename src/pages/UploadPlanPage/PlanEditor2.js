@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from 'react';
 import {
   PEWrapper,
   PETitleInput,
@@ -8,15 +8,15 @@ import {
   PEMapWrapper,
   OpenDetailBtn,
   PEInputWrapper,
-} from "./PlanEditor2Style";
-import OpenDetailPlan from "./OpenDetailPlan";
-import PECityInput from "./PECityInput";
+} from './PlanEditor2Style';
+import OpenDetailPlan from './OpenDetailPlan';
+import PECityInput from './PECityInput';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLocationArrow } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLocationArrow } from '@fortawesome/free-solid-svg-icons';
 
 const PlanEditor2 = () => {
-  const API_KEY = "AIzaSyDedTPh8y0kQKaWqEGKnPwXAMXhLeENOHU";
+  const API_KEY = 'AIzaSyDedTPh8y0kQKaWqEGKnPwXAMXhLeENOHU';
 
   const titleRef = useRef();
   const [title, setTitle] = useState();
@@ -25,7 +25,7 @@ const PlanEditor2 = () => {
   const [inputItems, setInputItems] = useState([
     {
       id: 0,
-      city: "",
+      city: '',
       days: 0,
     },
   ]);
@@ -49,7 +49,7 @@ const PlanEditor2 = () => {
   const AddInput = () => {
     const input = {
       id: inputAddId,
-      city: "",
+      city: '',
       days: 0,
     };
     setInputItems([...inputItems, input]);
@@ -89,8 +89,8 @@ const PlanEditor2 = () => {
     setDayDetails(
       Array.from({ length: 10 }, (_, index) => ({
         day: index + 1,
-        content: "",
-        detail: "",
+        content: '',
+        detail: '',
         toggle: false,
       }))
     );
@@ -98,7 +98,7 @@ const PlanEditor2 = () => {
 
   useEffect(() => {
     if (totalDays >= 10) {
-      alert("총 여행일수가 앞에서 설정한 날짜를 초과했습니다. 수정해주세요.");
+      alert('총 여행일수가 앞에서 설정한 날짜를 초과했습니다. 수정해주세요.');
     }
   }, [totalDays]);
 
@@ -138,7 +138,7 @@ const PlanEditor2 = () => {
               onChange={onChange}
             />
             <OpenDetailBtn onClick={toggleDetailPlan}>
-              {detailPlanOpen ? "상세계획 닫기" : "상세계획 열기"}
+              {detailPlanOpen ? '상세계획 닫기' : '상세계획 열기'}
             </OpenDetailBtn>
           </PEInputWrapper>
         </PEMapWrapper>

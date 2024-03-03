@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 import {
   PlusMinusBtn,
   PEInputForm,
   PESearchForm,
   PECity,
   BtnWrapper,
-} from "./PECityInputStyle";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+} from './PECityInputStyle';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 const PECityInput = ({
   inputItems,
@@ -35,7 +35,7 @@ const PECityInput = ({
                 -
               </PlusMinusBtn>
             ) : (
-              ""
+              ''
             )}
           </PESearchForm>
         );

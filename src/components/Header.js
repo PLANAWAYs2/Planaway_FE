@@ -1,4 +1,4 @@
-import { React, useRef, useState } from "react";
+import { React, useContext, useRef, useState } from "react";
 import {
   HeaderWrapper,
   Nav,
@@ -14,8 +14,11 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
+import { DispatchContext } from "../Router";
 
 const Header = () => {
+  const { onSearch } = useContext(DispatchContext);
+
   const searchRef = useRef();
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
@@ -28,6 +31,7 @@ const Header = () => {
       searchRef.current.focus();
       return;
     }
+    navigate("/search");
   };
 
   const handleUserClick = () => {
@@ -61,7 +65,7 @@ const Header = () => {
 
         <NavMenu2>
           <MenuWrapper>
-            <NavLink to="/uploadplan" activestyle="true">
+            <NavLink to="/uploadplan1" activestyle="true">
               여행 계획 시작하기
             </NavLink>
             <NavLink to="/planlist" activestyle="true">
@@ -73,12 +77,15 @@ const Header = () => {
           </MenuWrapper>
 
           <HSearchForm onSubmit={handleSubmit}>
-            <FontAwesomeIcon icon={faMagnifyingGlass} />{" "}
+            <FontAwesomeIcon icon={faMagnifyingGlass} />
             <HInput
               placeholder="가고 싶은 국가나 도시를 검색하세요."
               value={searchTerm}
               ref={searchRef}
-              onChange={(e) => setSearchTerm(e.target.value)}
+              onChange={(e) => {
+                setSearchTerm(e.target.value);
+                onSearch(e.target.value);
+              }}
               type="text"
             />
           </HSearchForm>

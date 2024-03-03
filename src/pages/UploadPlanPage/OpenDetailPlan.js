@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   ODPWrapper,
   ODPCityUl,
@@ -11,7 +11,7 @@ import {
   ODPDetailDay,
   ODPOpenBtn,
   DetailText,
-} from "./PlanEditor2Style";
+} from './PlanEditor2Style';
 
 const OpenDetailPlan = ({
   inputItems,
@@ -32,7 +32,7 @@ const OpenDetailPlan = ({
             onChange={(e) => onChangeDetail(e, detail.day)}
           />
           <ODPOpenBtn onClick={() => toggleDayPlan(index)}>
-            {detail.toggle ? "닫기" : "열기"}
+            {detail.toggle ? '닫기' : '열기'}
           </ODPOpenBtn>
         </ODPDetailDay>
 
