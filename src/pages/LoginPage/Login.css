@@ -33,7 +33,7 @@
   width: 63px;
   height: 29px;
   margin: auto;
-  margin-top: 150px;
+  margin-top: 71px;
   margin-bottom: 30px;
   font-family: 'Pretendard-SemiBold';
   font-size: 24px;
@@ -64,10 +64,19 @@
   display: flex;
   justify-content: space-between;
 }
+
+.LidPw .IInputTextForm {
+  margin-left: 10px;
+  width: 100%;
+}
+.LidPw .IButtonfalse {
+  display: none;
+}
 .Lpassword {
   display: flex;
   justify-content: space-between;
 }
+
 .Lid span,
 .Lpassword span {
   display: flex;

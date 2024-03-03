@@ -32,9 +32,8 @@
 .true,
 .false {
   display: flex;
-  width: 380px;
+  width: 95%;
   justify-content: space-between;
-  margin-left: 40px;
 }
 
 .IInputTextFormfalse,
