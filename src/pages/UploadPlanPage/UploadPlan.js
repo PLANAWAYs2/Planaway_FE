@@ -21,10 +21,6 @@ const UploadPlan = () => {
 
   const titleRef = useRef();
   const [title, setTitle] = useState("");
-
-  const [selectedContinent, setSelectedContinent] = useState("");
-  const [selectedCountry, setSelectedCountry] = useState("");
-
   const [numDays, setNumDays] = useState(0);
 
   return (
