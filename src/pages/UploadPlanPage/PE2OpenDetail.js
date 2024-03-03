@@ -20,6 +20,9 @@ const PE2OpenDetail = ({
   onChangeDetail,
   toggleDayPlan,
 }) => {
+  console.log("inputItems in OpenDetailPlan:", inputItems);
+  console.log("inputItems in OpenDetailPlan:", dayDetails);
+
   const generateInputForms = () => {
     return dayDetails.map((detail, index) => (
       <React.Fragment key={index}>

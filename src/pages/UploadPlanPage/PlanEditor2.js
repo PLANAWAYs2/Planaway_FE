@@ -1,7 +1,5 @@
-import { useRef, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import {
-  PEWrapper,
-  PETitleInput,
   PEContents,
   PEContentTitle,
   PEMap,
@@ -18,8 +16,6 @@ import { faLocationArrow } from "@fortawesome/free-solid-svg-icons";
 const PlanEditor2 = () => {
   const API_KEY = "AIzaSyDedTPh8y0kQKaWqEGKnPwXAMXhLeENOHU";
 
-  const titleRef = useRef();
-  const [title, setTitle] = useState();
   const [detailPlanOpen, setDetailPlanOpen] = useState(false);
 
   const [inputItems, setInputItems] = useState([
@@ -103,57 +99,46 @@ const PlanEditor2 = () => {
   }, [totalDays]);
 
   return (
-    <PEWrapper>
-      <PETitleInput
-        placeholder="제목을 입력하세요."
-        value={title}
-        ref={titleRef}
-        onChange={(e) => setTitle(e.target.value)}
-        type="text"
-      />
-      <hr />
+    <PEContents>
+      <PEContentTitle>
+        <FontAwesomeIcon icon={faLocationArrow} size="lg" />
+        <h4>첫 번째 여행지, 프랑스</h4>
+      </PEContentTitle>
 
-      <PEContents>
-        <PEContentTitle>
-          <FontAwesomeIcon icon={faLocationArrow} size="lg" />
-          <h4>첫 번째 여행지, 프랑스</h4>
-        </PEContentTitle>
-
-        <PEMapWrapper>
-          <PEMap>
-            <iframe
-              width="616px"
-              height="378px"
-              frameborder="0"
-              src={`https://www.google.com/maps/embed/v1/place?key=${API_KEY}&q=프랑스&zoom=6`} // "프랑스" 앞에서 가져오기
-            />
-          </PEMap>
-
-          <PEInputWrapper>
-            <PE2CityInput
-              inputItems={inputItems}
-              inputAddId={inputAddId}
-              AddInput={AddInput}
-              DeleteInput={DeleteInput}
-              onChange={onChange}
-            />
-            <OpenDetailBtn onClick={toggleDetailPlan}>
-              {detailPlanOpen ? "상세계획 닫기" : "상세계획 열기"}
-            </OpenDetailBtn>
-          </PEInputWrapper>
-        </PEMapWrapper>
-
-        {detailPlanOpen && (
-          <PE2OpenDetail
-            inputItems={inputItems}
-            dayDetails={dayDetails}
-            onChange={onChange}
-            onChangeDetail={onChangeDetail}
-            toggleDayPlan={toggleDayPlan}
+      <PEMapWrapper>
+        <PEMap>
+          <iframe
+            width="616px"
+            height="378px"
+            frameborder="0"
+            src={`https://www.google.com/maps/embed/v1/place?key=${API_KEY}&q=프랑스&zoom=6`} // "프랑스" 앞에서 가져오기
           />
-        )}
-      </PEContents>
-    </PEWrapper>
+        </PEMap>
+
+        <PEInputWrapper>
+          <PE2CityInput
+            inputItems={inputItems}
+            inputAddId={inputAddId}
+            AddInput={AddInput}
+            DeleteInput={DeleteInput}
+            onChange={onChange}
+          />
+          <OpenDetailBtn onClick={toggleDetailPlan}>
+            {detailPlanOpen ? "상세계획 닫기" : "상세계획 열기"}
+          </OpenDetailBtn>
+        </PEInputWrapper>
+      </PEMapWrapper>
+
+      {detailPlanOpen && (
+        <PE2OpenDetail
+          inputItems={inputItems}
+          dayDetails={dayDetails}
+          onChange={onChange}
+          onChangeDetail={onChangeDetail}
+          toggleDayPlan={toggleDayPlan}
+        />
+      )}
+    </PEContents>
   );
 };
 

@@ -1,3 +1,4 @@
+import React from "react";
 import {
   SBWrapper,
   SBLink,
@@ -6,30 +7,46 @@ import {
   SBBtnWrapper,
 } from "./SideBarStyle";
 
-const PlanSideBar = () => {
+const PlanSideBar = ({ setActive1, setActive2, setActive3, setActive4 }) => {
   return (
     <SBWrapper>
       <SBLink
-        to="/uploadplan1"
-        isActive={(match, location) => location.pathname === "/uploadplan1"}
+        onClick={() => {
+          setActive1(true);
+          setActive2(false);
+          setActive3(false);
+          setActive4(false);
+        }}
       >
         여행 정보
       </SBLink>
       <SBLink
-        to="/uploadplan2"
-        isActive={(match, location) => location.pathname === "/uploadplan2"}
+        onClick={() => {
+          setActive1(false);
+          setActive2(true);
+          setActive3(false);
+          setActive4(false);
+        }}
       >
         여행 상세정보
       </SBLink>
       <SBLink
-        to="/uploadplan3"
-        isActive={(match, location) => location.pathname === "/uploadplan3"}
+        onClick={() => {
+          setActive1(false);
+          setActive2(false);
+          setActive3(true);
+          setActive4(false);
+        }}
       >
         여행 준비물 리스트
       </SBLink>
       <SBLink
-        to="/uploadplan4"
-        isActive={(match, location) => location.pathname === "/uploadplan4"}
+        onClick={() => {
+          setActive1(false);
+          setActive2(false);
+          setActive3(false);
+          setActive4(true);
+        }}
       >
         여행 기념품 리스트
       </SBLink>

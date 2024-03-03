@@ -9,13 +9,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
-const PE2CityInput = ({
-  inputItems,
-  inputAddId,
-  AddInput,
-  DeleteInput,
-  onChange,
-}) => {
+const PE2CityInput = ({ inputItems, AddInput, DeleteInput, onChange }) => {
   return (
     <PECity>
       {inputItems.map((item, index) => {

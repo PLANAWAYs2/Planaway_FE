@@ -6,10 +6,7 @@ import PlanDetail from "./pages/PlanDetailPage/PlanDetail";
 import PlanList from "./pages/PlanListPage/PlanList";
 import PlanSets from "./pages/PlanSetsPage/PlanSets";
 import SignUp from "./pages/SignUpPage/SignUp";
-import UploadPlan1 from "./pages/UploadPlanPage/UploadPlan1";
-import UploadPlan2 from "./pages/UploadPlanPage/UploadPlan2";
-import UploadPlan3 from "./pages/UploadPlanPage/UploadPlan3";
-import UploadPlan4 from "./pages/UploadPlanPage/UploadPlan4";
+import UploadPlan from "./pages/UploadPlanPage/UploadPlan";
 import UserInfo from "./pages/UserInfoPage/UserInfo";
 import ViewPlan from "./pages/ViewPlanPage/ViewPlan";
 import WishList from "./pages/WishListPage/WishList";
@@ -36,10 +33,7 @@ const Router = () => {
             <Route path="/planlist" element={<PlanList />} />
             <Route path="/plansets" element={<PlanSets />} />
             <Route path="/signup" element={<SignUp />} />
-            <Route path="/uploadplan1" element={<UploadPlan1 />} />
-            <Route path="/uploadplan2" element={<UploadPlan2 />} />
-            <Route path="/uploadplan3" element={<UploadPlan3 />} />
-            <Route path="/uploadplan4" element={<UploadPlan4 />} />
+            <Route path="/uploadplan" element={<UploadPlan />} />
             <Route path="/userinfo" element={<UserInfo />} />
             <Route path="/viewplan" element={<ViewPlan />} />
             <Route path="/wishlist" element={<WishList />} />
