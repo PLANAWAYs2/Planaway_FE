@@ -2,6 +2,7 @@ import './SignUp.css';
 import { useState, useRef } from 'react';
 import Header from '../../components/Header';
 import { Container } from '../../Layout';
+import Input from '../../components/Input';
 
 const SignUp = () => {
   const nameInput = useRef();
@@ -69,64 +70,38 @@ const SignUp = () => {
           <div className="SUinfoBtn">
             <div className="SUinfo">
               <div className="SUname">
-                <span> 이름 </span>
-                <input
-                  ref={nameInput}
-                  name="name"
-                  value={state.name}
-                  onChange={handleChangeState}
+                <Input text="이름" type="name" btnState="false" />
+              </div>
+
+              <div className="SUid">
+                <Input
+                  text="아이디"
+                  type="id"
+                  btnState="true"
+                  btnText="중복 아이디 확인"
                 />
               </div>
-              <div className="SUidCheck">
-                <div className="SUid">
-                  <span> 아이디 </span>
-                  <input
-                    ref={idInput}
-                    name="id"
-                    value={state.id}
-                    onChange={handleChangeState}
-                  />
-                </div>
-                <button className={'SUdup_idButton'}>중복 아이디 확인</button>
-              </div>
-              <div className="SUemailCheck">
-                <div className="SUemail">
-                  <span> 이메일 </span>
-                  <input
-                    ref={emailInput}
-                    name="email"
-                    value={state.email}
-                    onChange={handleChangeState}
-                  />
-                </div>
-                <button className="SUdup_emailButton">중복 이메일 확인</button>
+
+              <div className="SUemail">
+                <Input
+                  text="이메일"
+                  type="email"
+                  btnState="true"
+                  btnText="중복 이메일 확인"
+                />{' '}
               </div>
               <div className="SUpassword">
-                <span> 비밀번호</span>
-                <input
-                  ref={passwordInput}
-                  name="password"
-                  value={state.content}
-                  onChange={handleChangeState}
-                />
+                <Input text="비밀번호" type="password" btnState="false" />
               </div>
               <div className="SUcheckPw">
-                <span> 비밀번호 확인 </span>
-                <input
-                  ref={checkPwInput}
-                  name="checkPw"
-                  value={state.checkPw}
-                  onChange={handleChangeState}
+                <Input
+                  text="비밀번호 확인"
+                  type="password_check"
+                  btnState="false"
                 />
               </div>
               <div className="SUtelephone">
-                <span> 전화번호 </span>
-                <input
-                  ref={telephoneInput}
-                  name="telephone"
-                  value={state.telephone}
-                  onChange={handleChangeState}
-                />
+                <Input text="전화번호" type="telephone" btnState="false" />
               </div>
             </div>
             <button onClick={handleSubmit} className="SUSignUpnButton">

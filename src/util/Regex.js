@@ -37,6 +37,12 @@ export const onChangeButton = (type, state, setStateMsg) => {
       }
       break;
     }
+    case 'telephone': {
+      const telephoneRegExp = /^(010)[0-9]{3,4}[0-9]{4}$/;
+      if (!telephoneRegExp.test(state)) {
+        alert('올바른 전화번호를 작성해주세요!');
+      }
+    }
     default:
       return;
   }

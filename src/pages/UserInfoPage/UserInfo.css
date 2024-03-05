@@ -84,7 +84,12 @@
   cursor: pointer;
 }
 
-.UIPfp,
+.UIPfp {
+  margin-left: 18px;
+  width: 380px;
+  display: flex;
+  justify-content: space-between;
+}
 .UIname,
 .UIid,
 .UIemail,
@@ -92,9 +97,9 @@
 .UIcheckPw,
 .UItelephone {
   margin: 7px;
-  width: 380px;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .UIPfp {
@@ -117,6 +122,10 @@
   align-items: center;
   margin-left: 10px;
   cursor: pointer;
+}
+.UIdup_idButton:hover,
+.UIdup_emailButton:hover {
+  text-decoration: underline;
 }
 
 .UIPfp span,

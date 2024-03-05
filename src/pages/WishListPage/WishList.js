@@ -1,20 +1,20 @@
-import { Container } from "../../Layout";
-import Header from "../../components/Header";
-import MyPageSideBar from "../../components/MyPageSideBar";
-import Profile from "../../components/Profile";
-import "./WishList.css";
+import { Container } from '../../Layout';
+import Header from '../../components/Header';
+import MyPageSideBar from '../../components/MyPageSideBar';
+import Profile from '../../components/Profile';
+import './WishList.css';
 
 const WishList = () => {
-  const API_KEY = "AIzaSyDedTPh8y0kQKaWqEGKnPwXAMXhLeENOHU";
+  const API_KEY = 'AIzaSyDedTPh8y0kQKaWqEGKnPwXAMXhLeENOHU';
   return (
     <>
       <Header />
       <Container>
-        <div style={{ display: "flex" /*justifyContent: "space-between"*/ }}>
+        <div style={{ display: 'flex' /*justifyContent: "space-between"*/ }}>
           <div className="WLframe">
             <MyPageSideBar />
           </div>
-          <div style={{ display: "flex", flexDirection: "column" }}>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
             <Profile />
             <div className="MSMap">
               <iframe

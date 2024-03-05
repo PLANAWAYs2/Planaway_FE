@@ -1,23 +1,14 @@
 import './Login.css';
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import Header from '../../components/Header';
 import { Container } from '../../Layout';
 import { useNavigate } from 'react-router-dom';
 import Input from '../../components/Input';
 
 const Login = () => {
-  const [stateMsg, setStateMsg] = useState('');
-
-  const idInput = useRef();
-  const passwordInput = useRef();
   const navigate = useNavigate();
 
-  const [state, setState] = useState({
-    id: '',
-    password: '',
-  });
-
-  const handleSubmit = (e) => {
+  const handleSubmit = () => {
     navigate('/');
   };
 
@@ -43,20 +34,10 @@ const Login = () => {
             <div className="LidPwBtn">
               <div className="LidPw">
                 <div className="Lid">
-                  <Input
-                    text="아이디"
-                    type="id"
-                    setStateMsg={setStateMsg}
-                    btnState="false"
-                  />
+                  <Input text="아이디" type="id" btnState="false" />
                 </div>
                 <div className="Lpassword">
-                  <Input
-                    text="비밀번호"
-                    type="password"
-                    setStateMsg={setStateMsg}
-                    btnState="false"
-                  />
+                  <Input text="비밀번호" type="password" btnState="false" />
                 </div>
               </div>
               <button onClick={handleSubmit} className="LLoginButton">
