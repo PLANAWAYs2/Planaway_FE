@@ -35,9 +35,7 @@ const PE2CityInput = ({ inputItems, AddInput, DeleteInput, onChange }) => {
         );
       })}
       <BtnWrapper>
-        {inputItems.length < 6 && (
-          <PlusMinusBtn onClick={() => AddInput()}> + </PlusMinusBtn>
-        )}
+        <PlusMinusBtn onClick={() => AddInput()}> + </PlusMinusBtn>
       </BtnWrapper>
     </PECity>
   );
