@@ -1,19 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import PE1Nation from "./PE1Nation";
 
-const PE1NationContainer = () => {
-  const [inputItems, setInputItems] = useState([
-    {
-      id: 0,
-      item: {
-        continent: "",
-        country: "",
-      },
-    },
-  ]);
-
+const PE1NationContainer = ({ inputCountry, setInputCountry }) => {
   const handleInputChange = (id, field, value) => {
-    setInputItems((prevInputItems) =>
+    setInputCountry((prevInputItems) =>
       prevInputItems.map((item) =>
         item.id === id
           ? { ...item, item: { ...item.item, [field]: value } }
@@ -23,7 +13,7 @@ const PE1NationContainer = () => {
   };
 
   const handleAddInput = () => {
-    setInputItems((prevInputItems) => [
+    setInputCountry((prevInputItems) => [
       ...prevInputItems,
       {
         id: prevInputItems.length,
@@ -36,7 +26,7 @@ const PE1NationContainer = () => {
   };
 
   const handleDeleteInput = (id) => {
-    setInputItems((prevInputItems) =>
+    setInputCountry((prevInputItems) =>
       prevInputItems.filter((item) => item.id !== id)
     );
   };
@@ -44,7 +34,7 @@ const PE1NationContainer = () => {
   return (
     <div>
       <PE1Nation
-        inputItems={inputItems}
+        inputCountry={inputCountry}
         onInputChange={handleInputChange}
         onAddInput={handleAddInput}
         onDeleteInput={handleDeleteInput}

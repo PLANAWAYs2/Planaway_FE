@@ -20,8 +20,8 @@ const PE2OpenDetail = ({
   onChangeDetail,
   toggleDayPlan,
 }) => {
-  console.log("inputItems in OpenDetailPlan:", inputItems);
-  console.log("inputItems in OpenDetailPlan:", dayDetails);
+  console.log("inputItems:", inputItems);
+  console.log("dayDetails:", dayDetails);
 
   const generateInputForms = () => {
     return dayDetails.map((detail, index) => (
@@ -32,7 +32,7 @@ const PE2OpenDetail = ({
             type="text"
             name="content"
             defaultValue={detail.content}
-            onChange={(e) => onChangeDetail(e, detail.day)}
+            onChange={(e) => onChangeDetail(e, detail.countryId, detail.day)}
           />
           <ODPOpenBtn onClick={() => toggleDayPlan(index)}>
             {detail.toggle ? "닫기" : "열기"}
@@ -43,7 +43,7 @@ const PE2OpenDetail = ({
           <DetailText
             name="detail"
             defaultValue={detail.detail}
-            onChange={(e) => onChangeDetail(e, detail.day)}
+            onChange={(e) => onChangeDetail(e, detail.countryId, detail.day)}
           />
         )}
       </React.Fragment>
@@ -61,7 +61,7 @@ const PE2OpenDetail = ({
                 type="text"
                 name="days"
                 defaultValue={item.days}
-                onChange={(e) => onChange(e, item.id)}
+                onChange={(e) => onChange(e, item.countryId, item.id)}
               />
               일
             </ODPDays>
