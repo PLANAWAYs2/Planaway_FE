@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationArrow } from "@fortawesome/free-solid-svg-icons";
 
 const PE1Nation = ({
-  inputItems,
+  inputCountry,
   onInputChange,
   onAddInput,
   onDeleteInput,
@@ -19,16 +19,18 @@ const PE1Nation = ({
   const [showPlusBtn, setShowPlusBtn] = useState(false);
 
   useEffect(() => {
-    console.log("Input items:", inputItems); // 배열 콘솔 출력 추가
-  }, [inputItems]);
+    console.log("Input items:", inputCountry); // 배열 콘솔 출력 추가
+  }, [inputCountry]);
 
   useEffect(() => {
-    if (inputItems.some((item) => !item.item.continent || !item.item.country)) {
+    if (
+      inputCountry.some((item) => !item.item.continent || !item.item.country)
+    ) {
       setShowPlusBtn(false);
     } else {
       setShowPlusBtn(true);
     }
-  }, [inputItems]);
+  }, [inputCountry]);
 
   useEffect(() => {
     const fetchCountries = async (continent) => {
@@ -44,7 +46,7 @@ const PE1Nation = ({
       }
     };
 
-    inputItems.forEach((item) => {
+    inputCountry.forEach((item) => {
       if (
         item.item.continent &&
         !countries.some((country) => country === item.item.continent)
@@ -52,7 +54,7 @@ const PE1Nation = ({
         fetchCountries(item.item.continent);
       }
     });
-  }, [inputItems]);
+  }, [inputCountry]);
 
   const handleContinentChange = (e, id) => {
     const { value } = e.target;
@@ -66,7 +68,7 @@ const PE1Nation = ({
 
   return (
     <div>
-      {inputItems.map((item, index) => (
+      {inputCountry.map((item, index) => (
         <PE1ContentBox key={index}>
           <PE1ContentTitle
             style={{ display: "flex", justifyContent: "space-between" }}
@@ -81,7 +83,7 @@ const PE1Nation = ({
                 <h4>여행할 국가를 입력하세요.</h4>
               )}
             </div>
-            {index > 0 && inputItems[index - 1] && (
+            {index > 0 && inputCountry[index - 1] && (
               <PE1PlusMinusBtn onClick={() => onDeleteInput(item.id)}>
                 -
               </PE1PlusMinusBtn>
@@ -119,7 +121,7 @@ const PE1Nation = ({
               </PE1ContentShortTitle>
             </>
           ) : null}
-          {index === inputItems.length - 1 && showPlusBtn && (
+          {index === inputCountry.length - 1 && showPlusBtn && (
             <PE1BtnWrapper>
               <PE1PlusMinusBtn onClick={onAddInput}>+</PE1PlusMinusBtn>
             </PE1BtnWrapper>

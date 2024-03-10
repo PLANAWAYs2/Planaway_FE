@@ -23,6 +23,16 @@ const UploadPlan = () => {
   const [title, setTitle] = useState("");
   const [numDays, setNumDays] = useState(0);
 
+  const [inputCountry, setInputCountry] = useState([
+    {
+      id: 0,
+      item: {
+        continent: "",
+        country: "",
+      },
+    },
+  ]);
+
   return (
     <>
       <Header />
@@ -44,11 +54,16 @@ const UploadPlan = () => {
             />
             <hr />
             <PEWrapper isActive={active1}>
-              <PlanEditor1 numDays={numDays} setNumDays={setNumDays} />
+              <PlanEditor1
+                numDays={numDays}
+                setNumDays={setNumDays}
+                inputCountry={inputCountry}
+                setInputCountry={setInputCountry}
+              />
             </PEWrapper>
 
             <PEWrapper isActive={active2}>
-              <PlanEditor2 numDays={numDays} />
+              <PlanEditor2 numDays={numDays} inputCountry={inputCountry} />
             </PEWrapper>
             <PEWrapper isActive={active3}>
               <PlanEditor3 />

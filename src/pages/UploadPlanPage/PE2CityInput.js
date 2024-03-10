@@ -21,7 +21,7 @@ const PE2CityInput = ({ inputItems, AddInput, DeleteInput, onChange }) => {
               name="city"
               type="text"
               defaultValue={item.one}
-              onChange={(e) => onChange(e, item.id)}
+              onChange={(e) => onChange(e, item.countryId, item.id)}
             />
 
             {index > 0 && inputItems[index - 1] ? (
