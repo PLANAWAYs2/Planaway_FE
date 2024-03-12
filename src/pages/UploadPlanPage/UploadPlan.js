@@ -69,7 +69,7 @@ const UploadPlan = () => {
               <PlanEditor3 />
             </PEWrapper>
             <PEWrapper isActive={active4}>
-              <PlanEditor4 />
+              <PlanEditor4 inputCountry={inputCountry} />
             </PEWrapper>
           </PE3Wrapper>
         </UPWrapper>

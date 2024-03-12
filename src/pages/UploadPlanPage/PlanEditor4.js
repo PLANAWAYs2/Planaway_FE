@@ -8,50 +8,26 @@ import {
 } from "./PlanEditor34Style";
 import PE3InputContainer from "./PE3InputContainer";
 
-const PlanEditor4 = () => {
+const PlanEditor4 = ({ inputCountry }) => {
   return (
     <PE3Container>
-      <PE3ContentBoxLine>
-        <PE3ContentBox>
-          <PE3ContentTitle>
-            <h4>프랑스</h4>
-          </PE3ContentTitle>
+      {inputCountry.map((country, index) => (
+        <div key={index}>
+          <PE3ContentBoxLine>
+            <PE3ContentBox>
+              <PE3ContentTitle>
+                <h4>{inputCountry[index]?.item?.country}</h4>
+              </PE3ContentTitle>
 
-          <PE3Contents>
-            <PE3MapWrapper>
-              <PE3InputContainer />
-            </PE3MapWrapper>
-          </PE3Contents>
-        </PE3ContentBox>
-      </PE3ContentBoxLine>
-
-      <PE3ContentBoxLine>
-        <PE3ContentBox>
-          <PE3ContentTitle>
-            <h4>이탈리아</h4>
-          </PE3ContentTitle>
-
-          <PE3Contents>
-            <PE3MapWrapper>
-              <PE3InputContainer />
-            </PE3MapWrapper>
-          </PE3Contents>
-        </PE3ContentBox>
-      </PE3ContentBoxLine>
-
-      <PE3ContentBoxLine>
-        <PE3ContentBox>
-          <PE3ContentTitle>
-            <h4>독일</h4>
-          </PE3ContentTitle>
-
-          <PE3Contents>
-            <PE3MapWrapper>
-              <PE3InputContainer />
-            </PE3MapWrapper>
-          </PE3Contents>
-        </PE3ContentBox>
-      </PE3ContentBoxLine>
+              <PE3Contents>
+                <PE3MapWrapper>
+                  <PE3InputContainer />
+                </PE3MapWrapper>
+              </PE3Contents>
+            </PE3ContentBox>
+          </PE3ContentBoxLine>
+        </div>
+      ))}
 
       <PE3ContentBoxLine>
         <PE3ContentBox>
