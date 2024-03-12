@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { NavLink as Link } from "react-router-dom";
+import styled from 'styled-components';
+import { NavLink as Link } from 'react-router-dom';
 
 export const HeaderWrapper = styled.div`
   hr {
@@ -10,7 +10,7 @@ export const HeaderWrapper = styled.div`
 `;
 
 export const Nav = styled.nav`
-  font-family: "Pretendard-Regular";
+  font-family: 'Pretendard-Regular';
   color: #2c2c2c;
   display: flex;
   flex-direction: column;
@@ -82,7 +82,7 @@ export const HInput = styled.input`
   background-color: #efefef;
   width: 100%;
 
-  font-family: "Pretendard-Regular";
+  font-family: 'Pretendard-Regular';
   font-size: 14px;
   color: #2c2c2c;
 `;
@@ -99,7 +99,7 @@ export const HButton = styled.button`
   border: #e9e9e9 1px solid;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-  font-family: "Pretendard-Regular";
+  font-family: 'Pretendard-Regular';
   font-size: 14px;
   font-weight: 600;
   color: #2c2c2c;

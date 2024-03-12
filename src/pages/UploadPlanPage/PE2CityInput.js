@@ -9,13 +9,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
-const PECityInput = ({
-  inputItems,
-  inputAddId,
-  AddInput,
-  DeleteInput,
-  onChange,
-}) => {
+const PE2CityInput = ({ inputItems, AddInput, DeleteInput, onChange }) => {
   return (
     <PECity>
       {inputItems.map((item, index) => {
@@ -27,7 +21,7 @@ const PECityInput = ({
               name="city"
               type="text"
               defaultValue={item.one}
-              onChange={(e) => onChange(e, item.id)}
+              onChange={(e) => onChange(e, item.countryId, item.id)}
             />
 
             {index > 0 && inputItems[index - 1] ? (
@@ -41,12 +35,10 @@ const PECityInput = ({
         );
       })}
       <BtnWrapper>
-        {inputItems.length < 6 && (
-          <PlusMinusBtn onClick={() => AddInput()}> + </PlusMinusBtn>
-        )}
+        <PlusMinusBtn onClick={() => AddInput()}> + </PlusMinusBtn>
       </BtnWrapper>
     </PECity>
   );
 };
 
-export default PECityInput;
+export default PE2CityInput;

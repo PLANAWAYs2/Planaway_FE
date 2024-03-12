@@ -41,6 +41,7 @@ export const PlusMinusBtn = styled.button`
   border-radius: 4px;
   background-color: white;
   cursor: pointer;
+  margin-bottom: 8px;
 
   font-family: "Pretendard-Regular";
   font-size: 16px;

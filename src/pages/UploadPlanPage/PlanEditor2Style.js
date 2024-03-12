@@ -27,7 +27,7 @@ export const PETitleInput = styled.input`
 export const PEContents = styled.div``;
 
 export const PEInputWrapper = styled.div`
-  height: 378px;
+  min-height: 378px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -76,6 +76,7 @@ export const ODPWrapper = styled.div`
   display: flex;
   width: 828px;
   border: 1px solid #efefef;
+  margin-bottom: 70px;
 `;
 
 export const ODPCityUl = styled.ul`

@@ -1,7 +1,5 @@
-import { useRef, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import {
-  PEWrapper,
-  PETitleInput,
   PEContents,
   PEContentTitle,
   PEMap,
@@ -9,30 +7,33 @@ import {
   OpenDetailBtn,
   PEInputWrapper,
 } from "./PlanEditor2Style";
-import OpenDetailPlan from "./OpenDetailPlan";
-import PECityInput from "./PECityInput";
+import PE2OpenDetail from "./PE2OpenDetail";
+import PE2CityInput from "./PE2CityInput";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationArrow } from "@fortawesome/free-solid-svg-icons";
 
-const PlanEditor2 = () => {
+const PlanEditor2 = ({ inputCountry }) => {
   const API_KEY = "AIzaSyDedTPh8y0kQKaWqEGKnPwXAMXhLeENOHU";
-
-  const titleRef = useRef();
-  const [title, setTitle] = useState();
-  const [detailPlanOpen, setDetailPlanOpen] = useState(false);
 
   const [inputItems, setInputItems] = useState([
     {
+      countryId: 0,
       id: 0,
       city: "",
       days: 0,
     },
   ]);
-  const [dayDetails, setDayDetails] = useState([]);
 
+  const [detailPlanOpen, setDetailPlanOpen] = useState(false);
+  const [dayDetails, setDayDetails] = useState([]);
   const [inputAddId, setInputAddId] = useState(1);
-  const [totalDays, setTotalDays] = useState(0);
+  const [totalDays, setTotalDays] = useState([
+    {
+      id: 0,
+      sum: 0,
+    },
+  ]);
 
   const toggleDetailPlan = () => {
     setDetailPlanOpen(!detailPlanOpen);
@@ -46,8 +47,9 @@ const PlanEditor2 = () => {
     );
   };
 
-  const AddInput = () => {
+  const AddInput = (cId) => {
     const input = {
+      countryId: cId,
       id: inputAddId,
       city: "",
       days: 0,
@@ -60,100 +62,133 @@ const PlanEditor2 = () => {
     setInputItems(inputItems.filter((item) => item.id !== id));
   };
 
-  const onChange = (e, id) => {
+  const onChange = (e, cId, id) => {
     const { name, value } = e.target;
 
     setInputItems(
-      inputItems.map((item) =>
-        item.id === id ? { ...item, [name]: value } : item
-      )
+      inputItems.map((item) => {
+        if (item.countryId === cId && item.id === id) {
+          return { ...item, [name]: value };
+        } else {
+          return item;
+        }
+      })
     );
   };
 
-  const onChangeDetail = (e, day) => {
+  useEffect(() => {
+    console.log("totalday: ", totalDays);
+  }, [totalDays]);
+
+  const onChangeDetail = (e, cId, day) => {
     const { name, value } = e.target;
 
     setDayDetails(
-      dayDetails.map((detail) =>
-        detail.day === day ? { ...detail, [name]: value } : detail
-      )
+      dayDetails.map((detail) => {
+        if (detail.countryId === cId && detail.day === day) {
+          return { ...detail, [name]: value };
+        } else {
+          return detail;
+        }
+      })
     );
   };
 
   useEffect(() => {
-    const days = inputItems.reduce((acc, curr) => acc + parseInt(curr.days), 0);
-    setTotalDays(days);
+    const calculateTotalDays = () => {
+      const sums = {};
+
+      // 각 countryId에 대한 일 수 합계 계산
+      inputItems.forEach((item) => {
+        const { countryId, days } = item;
+        sums[countryId] = (sums[countryId] || 0) + parseInt(days);
+      });
+
+      // 합계를 totalDays 상태에 저장
+      setTotalDays(
+        Object.keys(sums).map((countryId) => ({
+          id: parseInt(countryId),
+          sum: sums[countryId],
+        }))
+      );
+    };
+
+    calculateTotalDays();
   }, [inputItems]);
 
   useEffect(() => {
-    setDayDetails(
-      Array.from({ length: 10 }, (_, index) => ({
-        day: index + 1,
-        content: "",
-        detail: "",
-        toggle: false,
-      }))
-    );
-  }, []); //length: 10으로 기본 만들어놨고 나중에 9-1에서 몇박 몇일 가져올거야
+    console.log(totalDays);
+    let updatedDetails = [];
 
-  useEffect(() => {
-    if (totalDays >= 10) {
-      alert("총 여행일수가 앞에서 설정한 날짜를 초과했습니다. 수정해주세요.");
-    }
+    totalDays.forEach(({ id, sum }) => {
+      updatedDetails = [
+        ...updatedDetails,
+        ...Array.from({ length: sum }, (_, index) => ({
+          countryId: id,
+          day: index + 1,
+          content: "",
+          detail: "",
+          toggle: false,
+        })),
+      ];
+    });
+
+    setDayDetails(updatedDetails);
   }, [totalDays]);
 
   return (
-    <PEWrapper>
-      <PETitleInput
-        placeholder="제목을 입력하세요."
-        value={title}
-        ref={titleRef}
-        onChange={(e) => setTitle(e.target.value)}
-        type="text"
-      />
-      <hr />
+    <PEContents>
+      {inputCountry.map((country, index) => (
+        <div key={index}>
+          <PEContentTitle>
+            <FontAwesomeIcon icon={faLocationArrow} size="lg" />
+            <h4>
+              {index + 1}번째 여행지, {inputCountry[index]?.item?.country}
+            </h4>
+          </PEContentTitle>
+          <PEMapWrapper>
+            <PEMap>
+              <iframe
+                key={index}
+                width="616px"
+                height="378px"
+                frameborder="0"
+                src={`https://www.google.com/maps/embed/v1/place?key=${API_KEY}&q=${inputCountry[index]?.item?.country}&zoom=6`}
+              />
+            </PEMap>
 
-      <PEContents>
-        <PEContentTitle>
-          <FontAwesomeIcon icon={faLocationArrow} size="lg" />
-          <h4>첫 번째 여행지, 프랑스</h4>
-        </PEContentTitle>
+            <PEInputWrapper>
+              <PE2CityInput
+                inputItems={inputItems.filter(
+                  (item) => item.countryId === inputCountry[index]?.id
+                )}
+                AddInput={() => AddInput(inputCountry[index].id)}
+                DeleteInput={DeleteInput}
+                onChange={onChange}
+              />
 
-        <PEMapWrapper>
-          <PEMap>
-            <iframe
-              width="616px"
-              height="378px"
-              frameborder="0"
-              src={`https://www.google.com/maps/embed/v1/place?key=${API_KEY}&q=프랑스&zoom=6`} // "프랑스" 앞에서 가져오기
-            />
-          </PEMap>
+              <OpenDetailBtn onClick={toggleDetailPlan}>
+                {detailPlanOpen ? "상세계획 닫기" : "상세계획 열기"}
+              </OpenDetailBtn>
+            </PEInputWrapper>
+          </PEMapWrapper>
 
-          <PEInputWrapper>
-            <PECityInput
-              inputItems={inputItems}
-              inputAddId={inputAddId}
-              AddInput={AddInput}
-              DeleteInput={DeleteInput}
+          {detailPlanOpen && (
+            <PE2OpenDetail
+              inputItems={inputItems.filter(
+                (item) => inputCountry[index]?.id === item.countryId
+              )}
+              dayDetails={dayDetails.filter(
+                (item) => inputCountry[index]?.id === item.countryId
+              )}
               onChange={onChange}
+              onChangeDetail={onChangeDetail}
+              toggleDayPlan={toggleDayPlan}
             />
-            <OpenDetailBtn onClick={toggleDetailPlan}>
-              {detailPlanOpen ? "상세계획 닫기" : "상세계획 열기"}
-            </OpenDetailBtn>
-          </PEInputWrapper>
-        </PEMapWrapper>
-
-        {detailPlanOpen && (
-          <OpenDetailPlan
-            inputItems={inputItems}
-            dayDetails={dayDetails}
-            onChange={onChange}
-            onChangeDetail={onChangeDetail}
-            toggleDayPlan={toggleDayPlan}
-          />
-        )}
-      </PEContents>
-    </PEWrapper>
+          )}
+        </div>
+      ))}
+    </PEContents>
   );
 };
 

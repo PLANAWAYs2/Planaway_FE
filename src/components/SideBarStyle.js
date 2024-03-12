@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { NavLink as Link } from "react-router-dom";
+import styled from 'styled-components';
+import { NavLink as Link } from 'react-router-dom';
 
 export const SBWrapper = styled.div`
   width: 172px;
@@ -9,10 +9,11 @@ export const SBWrapper = styled.div`
 `;
 
 export const SBLink = styled(Link)`
+  width: 172px;
   border: none;
   border-bottom: 1px solid #9a9a9a;
   width: 172px;
-  font-family: "Pretendard-Regular";
+  font-family: 'Pretendard-Regular';
   font-size: 16px;
   color: #9a9a9a;
   text-decoration: none;
@@ -34,7 +35,7 @@ export const SBLink = styled(Link)`
 `;
 
 export const SBTemporarySaveBtn = styled.button`
-  font-family: "Pretendard-Regular";
+  font-family: 'Pretendard-Regular';
   font-size: 14px;
   color: #9b9b9b;
   background-color: #efefef;
@@ -45,7 +46,7 @@ export const SBTemporarySaveBtn = styled.button`
   cursor: pointer;
 `;
 export const SBSaveBtn = styled.button`
-  font-family: "Pretendard-Regular";
+  font-family: 'Pretendard-Regular';
   font-size: 14px;
   color: #ffffff;
   background-color: #ff6827;
